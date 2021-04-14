@@ -1,0 +1,6 @@
+.carousel-inner {
+  height: 80vh;
+}
+.clip {
+  clip: rect(0, 0, 50vh, 50vh);
+}
