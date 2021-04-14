@@ -1,6 +1,27 @@
-.carousel-inner {
-  height: 80vh;
+.headerTextHome {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 4rem;
 }
-.clip {
-  clip: rect(0, 0, 50vh, 50vh);
+.headerTextHome img {
+  width: 5em;
+}
+.categoryList {
+  margin-bottom: 4rem;
+}
+.headerCategoriesHome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  width: 100%;
+}
+.headerCategoriesHome hr {
+  border: 1px solid #444444;
+  width: 100%;
+  margin: 0;
+  opacity: 100%;
 }
