@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { route } from './app.route';
 import { RouterModule } from '@angular/router';
 
+import { CategoryCardComponent } from './category-card/category-card.component';
+
 
 @NgModule({
   declarations: [
@@ -17,13 +19,15 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     TravelListComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    CategoryCardComponent
   ],
   imports: [
     BrowserModule,
     
     FormsModule,
     RouterModule.forRoot(route),
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
