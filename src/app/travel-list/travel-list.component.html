@@ -1,1 +1,52 @@
-<p>travel-list works!</p>
+<form (ngSubmit)="onSubmit()" [formGroup]="filtersForm">
+
+    <h3>Travel</h3>
+    <div class="input-group w-50" formGroupName="travelLocations" >
+        <span class="input-group-text">Go from ... to ...</span>
+        <input type="text" class="form-control" placeholder="From..." formControlName="from" >
+        <input type="text" class="form-control" placeholder="To..." formControlName="to" >
+    </div>
+    <select class="form-select w-50">
+        <option selected>Filter by state</option>
+        <option value="france">France</option>
+        <option value="spain">Spain</option>
+        <option value="italia">Italia</option>
+    </select>
+    <div class="input-group w-50">
+        <span class="input-group-text">Travel Dates</span>
+        <mat-date-range-input class="form-control" [rangePicker]="travelDates" formGroupName="travelDates">
+            <input matStartDate placeholder="Start date" formControlName="start" >
+            <input matEndDate placeholder="End date" formControlName="end">
+        </mat-date-range-input>
+        <mat-datepicker-toggle [for]="travelDates" matSuffix ></mat-datepicker-toggle>
+        <mat-date-range-picker #travelDates></mat-date-range-picker>
+    </div>
+
+    <h3>Flight</h3>
+    <div class="form-check form-switch w-50">
+        <input class="form-check-input" type="checkbox" id="flightType" [checked]="flightRound" (change)="flightRound = !flightRound" >
+        <label class="form-check-label" for="flightType">Round trip</label>
+    </div>
+    <!-- DATE ALLER SIMPLE -->
+    <div *ngIf="!flightRound" class="input-group w-50">
+        <span class="input-group-text">Flight Date</span>
+        <input matInput class="form-control" [matDatepicker]="simpleFlightDate" formControlName="singleFlightDate">
+        <mat-datepicker-toggle [for]="simpleFlightDate" matSuffix ></mat-datepicker-toggle>
+        <mat-datepicker #simpleFlightDate></mat-datepicker>
+    </div>
+    <!-- DATE ALLER RETOUR -->
+    <div *ngIf="flightRound" class="input-group w-50">
+        <span class="input-group-text">Flight Dates</span>
+        <mat-date-range-input class="form-control" [rangePicker]="doubleFlightDates" formGroupName="doubleFlightDates">
+            <input matStartDate placeholder="Start date" formControlName="start">
+            <input matEndDate placeholder="End date" formControlName="end">
+        </mat-date-range-input>
+        <mat-datepicker-toggle [for]="doubleFlightDates" matSuffix ></mat-datepicker-toggle>
+        <mat-date-range-picker #doubleFlightDates></mat-date-range-picker>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-50">
+        Search
+    </button>
+
+</form>

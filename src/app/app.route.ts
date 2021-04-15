@@ -12,6 +12,7 @@ export const route: Routes = [
 { path: 'travel-list', component: TravelListComponent },
 { path: 'navbar', component: NavbarComponent },
 { path: 'footer', component: FooterComponent },
+// { path: 'contact', component: ContactComponent }
 
 ];
 
