@@ -1,10 +1,10 @@
-<form (ngSubmit)="onSubmit()" #form="ngForm">
+<form (ngSubmit)="onSubmit()" [formGroup]="filtersForm">
 
     <h3>Travel</h3>
-    <div class="input-group w-50">
+    <div class="input-group w-50" formGroupName="travelLocations" >
         <span class="input-group-text">Go from ... to ...</span>
-        <input type="text" class="form-control" placeholder="From..." >
-        <input type="text" class="form-control" placeholder="To..." >
+        <input type="text" class="form-control" placeholder="From..." formControlName="from" >
+        <input type="text" class="form-control" placeholder="To..." formControlName="to" >
     </div>
     <select class="form-select w-50">
         <option selected>Filter by state</option>
@@ -14,9 +14,9 @@
     </select>
     <div class="input-group w-50">
         <span class="input-group-text">Travel Dates</span>
-        <mat-date-range-input class="form-control" [rangePicker]="travelDates">
-            <input matStartDate placeholder="Start date">
-            <input matEndDate placeholder="End date">
+        <mat-date-range-input class="form-control" [rangePicker]="travelDates" formGroupName="travelDates">
+            <input matStartDate placeholder="Start date" formControlName="start" >
+            <input matEndDate placeholder="End date" formControlName="end">
         </mat-date-range-input>
         <mat-datepicker-toggle [for]="travelDates" matSuffix ></mat-datepicker-toggle>
         <mat-date-range-picker #travelDates></mat-date-range-picker>
@@ -30,16 +30,16 @@
     <!-- DATE ALLER SIMPLE -->
     <div *ngIf="!flightRound" class="input-group w-50">
         <span class="input-group-text">Flight Date</span>
-        <input matInput class="form-control" [matDatepicker]="simpleFlightDate">
+        <input matInput class="form-control" [matDatepicker]="simpleFlightDate" formControlName="singleFlightDate">
         <mat-datepicker-toggle [for]="simpleFlightDate" matSuffix ></mat-datepicker-toggle>
         <mat-datepicker #simpleFlightDate></mat-datepicker>
     </div>
     <!-- DATE ALLER RETOUR -->
     <div *ngIf="flightRound" class="input-group w-50">
         <span class="input-group-text">Flight Dates</span>
-        <mat-date-range-input class="form-control" [rangePicker]="doubleFlightDates">
-            <input matStartDate placeholder="Start date" matDatepicker="{{simpleFlightDate}}">
-            <input matEndDate placeholder="End date">
+        <mat-date-range-input class="form-control" [rangePicker]="doubleFlightDates" formGroupName="doubleFlightDates">
+            <input matStartDate placeholder="Start date" formControlName="start">
+            <input matEndDate placeholder="End date" formControlName="end">
         </mat-date-range-input>
         <mat-datepicker-toggle [for]="doubleFlightDates" matSuffix ></mat-datepicker-toggle>
         <mat-date-range-picker #doubleFlightDates></mat-date-range-picker>
