@@ -11,6 +11,7 @@ import { route } from './app.route';
 import { RouterModule } from '@angular/router';
 
 import { CategoryCardComponent } from './category-card/category-card.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CategoryCardComponent } from './category-card/category-card.component';
     TravelListComponent,
     NavbarComponent,
     FooterComponent,
-    CategoryCardComponent
+    CategoryCardComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
