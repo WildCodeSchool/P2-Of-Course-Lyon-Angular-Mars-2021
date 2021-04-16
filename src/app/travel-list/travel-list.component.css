@@ -17,3 +17,10 @@ button {
 .form-select {
   margin-bottom: 1em;
 }
+.cardList {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}

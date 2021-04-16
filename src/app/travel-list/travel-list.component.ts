@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Card } from '../models/card.model';
 @Component({
   selector: 'app-travel-list',
   templateUrl: './travel-list.component.html',
@@ -7,7 +8,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class TravelListComponent implements OnInit {
 
-  // ERREUR AU CHARGEMENT DU FORMULAIRE
+  cardList: Card[] = []
 
   flightRound: boolean = false;
   
@@ -34,7 +35,11 @@ export class TravelListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+    this.cardList.push(
+      new Card ('Venice','assets/venice.jpeg','0034565443', 'An invitation to the "Eternal City" where you can only be amazed at the riches of the Italian capital. A weekend where we reserve you two essential visi...'),
+      new Card ('Venice','assets/venice.jpeg','0034565443', 'An invitation to the "Eternal City" where you can only be amazed at the riches of the Italian capital. A weekend where we reserve you two essential visi...'),
+      new Card ('Venice','assets/venice.jpeg','0034565443', 'An invitation to the "Eternal City" where you can only be amazed at the riches of the Italian capital. A weekend where we reserve you two essential visi...')
+    )
   }
 
 }
