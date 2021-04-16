@@ -39,13 +39,26 @@
             <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 125px; height: 2px">
             
             <ul class="list-unstyled d-flex row">
-                <p class="contact">nous contacter</p>
+                <p class="contact">Nous contacter</p>
              
-                <a href="" target="_blank"> <span class="fas fa-envelope"> </span> </a>
+                <a  class="fas fa-envelope fs-1 text-decoration-underline h-25" (click)=itemClicked()> <span > 
+                    <div [hidden]= "toggoleShowHide">
+                        <p dir="auto" class="fs-6 text-decoration-underline">
+                          ofcourse@gmail.com
+                        </p>
+                      </div>
+                </span> </a>
                 <a href=""> <span class="fas fa-mobile-alt"> </span></a>
               
             </ul>
+            
         </div>
+
+
+
+       
+
+
 
 
 <p><i>&copy;Copyright 2021 - by OfCourse</i></p>
@@ -58,3 +71,5 @@
 
 
 </footer>
+<!-- To Do
+icone lettre + tel cliquable pour afficher le num et l'adresse mail  -->
