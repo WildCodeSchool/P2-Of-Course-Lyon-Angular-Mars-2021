@@ -1,6 +1,37 @@
 #logo {
   background-color: #013766;
-  padding-bottom: 150px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+#nuage {
+  display: flex;
+  justify-content: space-around;
+}
+
+#bou {
+  margin-top: -155px;
+  margin-bottom: -10px;
+}
+
+#bou2 {
+  margin-top: -90px;
+  margin-bottom: 90px;
+}
+
+#bou3 {
+  margin-top: 60px;
+  margin-bottom: 15px;
+}
+
+#bou4 {
+  margin-top: 50px;
+  margin-bottom: -140px;
+}
+
+#avions {
+  margin-top: -100px;
+  margin-bottom: 10px;
 }
 
 #nav {
