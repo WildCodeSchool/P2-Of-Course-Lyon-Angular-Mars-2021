@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { CardTravelComponent } from './card-travel/card-travel.component';
+import { ActivityComponent } from './activity/activity.component';
+
 import { HomeComponent } from './home/home.component';
 import { TravelListComponent } from './travel-list/travel-list.component';
 import { NavbarComponent, } from './navbar/navbar.component';
@@ -19,6 +22,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
+    CardTravelComponent,
+    ActivityComponent,
     HomeComponent,
     TravelListComponent,
     NavbarComponent,
@@ -27,6 +32,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(route),
