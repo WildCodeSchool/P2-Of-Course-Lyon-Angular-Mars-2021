@@ -50,3 +50,7 @@
     </button>
 
 </form>
+
+<div class="cardList" *ngFor="let cardItem of cardList">
+    <app-card-travel [card]="cardItem" ></app-card-travel>
+</div>

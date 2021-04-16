@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 export const route: Routes = [
 
 { path: 'home', component: HomeComponent },
+{ path: '', component: HomeComponent },
 { path: 'travel-list', component: TravelListComponent },
 { path: 'navbar', component: NavbarComponent },
 { path: 'footer', component: FooterComponent },
