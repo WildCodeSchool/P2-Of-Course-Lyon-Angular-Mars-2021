@@ -16,9 +16,15 @@ export class FooterComponent implements OnInit {
 }
 
 toggoleShowHide = true;
+toggole = true;
+
 
 itemClicked(){
   this.toggoleShowHide = !this.toggoleShowHide;
+  
+}
+phoneClicked(){
+  this.toggole = !this.toggole;
   
 }
 }
