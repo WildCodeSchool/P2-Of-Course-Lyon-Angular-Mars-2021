@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 
 import { CategoryCardComponent } from './category-card/category-card.component';
 import { ContactComponent } from './contact/contact.component';
+import { ModalconnexionComponent } from './modalconnexion/modalconnexion.component';
 
 import { route } from './app.route';
 import { RouterModule } from '@angular/router';
@@ -31,7 +32,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     NavbarComponent,
     FooterComponent,
     CategoryCardComponent,
-    ContactComponent
+    ContactComponent,
+    ModalconnexionComponent
   ],
   imports: [
     FormsModule,
