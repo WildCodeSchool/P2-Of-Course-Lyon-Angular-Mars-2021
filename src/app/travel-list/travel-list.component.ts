@@ -28,30 +28,28 @@ export class TravelListComponent implements OnInit {
   contOptions: string[] = this.voyageService.initVoyage().map((x) => x.continent)
   
   onSubmit(){
-    console.log(this.filtersForm.value)
+    this.voyages = this.voyageService.initVoyage()
+    if(this.filtersForm.get('toLoc').value){
+      this.voyages = this.voyages.filter((x) => x.name.includes(this.filtersForm.get('toLoc').value))
+    }else if(this.filtersForm.get('state').value){
+      this.voyages = this.voyages.filter((x) => x.pays.includes(this.filtersForm.get('state').value))
+    }else if(this.filtersForm.get('continent').value){
+      this.voyages = this.voyages.filter((x) => x.continent.includes(this.filtersForm.get('continent').value))
+    }
   }
 
-  filterSingleAutoCompleteResult(array: string[], value: string): string[]{
+  getChangingOptions(array: string[], value: string): string[]{
     let newTab: string[] = []
-    // parcourir tout les voyages
     array.forEach(element => {
-      // vérifier si value est dans le nouveau tableau
-      if(!newTab.includes(element) && element.indexOf(value) === 0){
-        // si non, l'ajouter
-        newTab.push(element)
+      if(value){
+        if(!newTab.includes(element) && element.toLowerCase().startsWith(value.toLowerCase(), 0)){
+          newTab.push(element)
+        }else if(!newTab.includes(element) && !value){
+          newTab.push(element)
+        }
       }
     });
-    return newTab
-  }
-
-  filterAutoComplete(array: string[], value: string): string[]{
-    let newTab: string[] = [];
-    array.forEach(element => {
-      if(element.includes(value)){
-        newTab.push(element)
-      }
-    });
-    return newTab
+    return newTab;
   }
 
   constructor(private voyageService: ListVoyages) { 

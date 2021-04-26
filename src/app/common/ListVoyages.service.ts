@@ -8,25 +8,11 @@ import { Voyage } from './Voyage.service';
 export class ListVoyages {
   
   constructor() {}
-  public _listDeVoyages: Voyage[] = [];
+  public _listDeVoyages: Voyage[];
 
   public initVoyage() {
     this._listDeVoyages = []
     this._listDeVoyages.push(
-      new Voyage(
-        'asie',
-        'japon',
-        'pekin',
-        'voyage a pekin',
-        '../../assets/img/japon.png'
-      ),
-      new Voyage(
-        'asie',
-        'japon',
-        'pekin',
-        'voyage a pekin',
-        '../../assets/img/japon.png'
-      ),
       new Voyage(
         'asie',
         'japon',
