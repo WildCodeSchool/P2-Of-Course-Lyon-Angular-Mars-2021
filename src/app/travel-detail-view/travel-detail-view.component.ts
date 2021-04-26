@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ListVoyages } from '../common/ListVoyages.service';
+import { Voyage } from '../common/Voyage.service';
 
 
 @Component({
@@ -9,10 +11,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TravelDetailViewComponent implements OnInit {
 
   //@Input() vogageView : Voyage
-  public titleOfTravel: String = "China"
-  constructor() { }
-
+ 
+ // constructor(private service: ListVoyages) { }
+//public voyage : Voyage []=[]
   ngOnInit(): void {
-  }
+  
+  //this.voyage = this.service.getVille('New Delhi');
+ }
 
 }
