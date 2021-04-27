@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Voyage } from '../common/Voyage.service';
+import { Voyage } from '../common/Voyage.model';
 
 @Component({
   selector: 'app-card-travel',

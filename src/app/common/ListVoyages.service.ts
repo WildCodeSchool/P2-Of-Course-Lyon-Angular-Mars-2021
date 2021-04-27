@@ -1,6 +1,6 @@
 import { convertActionBinding } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Injectable } from '@angular/core';
-import { Voyage } from './Voyage.service';
+import { Voyage } from './Voyage.model';
 
 @Injectable({
   providedIn:'root'

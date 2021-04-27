@@ -9,8 +9,13 @@ export class FooterComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  dateCopyright: number= (new Date()).getFullYear()
+
+ 
+ngOnInit() {
+  
+  
+}
  openLink(url:string){
   window.open(url)
 }
@@ -27,4 +32,5 @@ phoneClicked(){
   this.toggole = !this.toggole;
   
 }
+
 }
