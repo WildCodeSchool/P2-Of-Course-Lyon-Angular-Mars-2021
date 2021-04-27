@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ListVoyages } from '../common/ListVoyages.service';
-import { Voyage } from '../common/Voyage.service';
+import { Voyage } from '../common/Voyage.model';
 @Component({
   selector: 'app-travel-list',
   templateUrl: './travel-list.component.html',
