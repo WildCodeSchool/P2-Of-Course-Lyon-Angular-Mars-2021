@@ -1,10 +1,43 @@
 #logo {
   background-color: #013766;
-  padding-bottom: 150px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+#nuage {
+  display: flex;
+  justify-content: space-around;
+}
+
+#bou {
+  margin-top: -155px;
+  margin-bottom: -10px;
+}
+
+#bou2 {
+  margin-top: -90px;
+  margin-bottom: 90px;
+}
+
+#bou3 {
+  margin-top: 60px;
+  margin-bottom: 15px;
+}
+
+#bou4 {
+  margin-top: 50px;
+  margin-bottom: -140px;
+}
+
+#avions {
+  margin-top: -100px;
+  margin-bottom: 10px;
 }
 
 #nav {
   background-color: #0275d8;
+
+  margin-bottom: -16px;
   margin-left: -8px;
   margin-right: -8px;
   margin-top: -16px;
@@ -108,4 +141,10 @@ nav ul li span:nth-child(3) {
 
 nav ul li span:nth-child(4) {
   --n: 4;
+}
+
+@media screen and (max-width: 900px) {
+  #logo {
+    display: none;
+  }
 }

@@ -1,0 +1,42 @@
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+  <div class="ms-5 me-5 mb-5 form-group d-flex justify-content-center row ">
+    <label for="nom-input" class="form-label mt-5 ">Nom</label>
+    <input  type="text" class="form-control"  placeholder="NOM" [(ngModel)]="model.nom" name="email" #email="ngModel" email required minlength="8" maxlength="120">
+  </div>
+
+  <div class="m-5  form-group d-flex justify-content-center row ">
+    <label for="prenom-input" class="form-label">Prénom</label>
+    <input  type="text" class="form-control"  placeholder="Prénom" [(ngModel)]="model.prenom" name="email" #email="ngModel" email required minlength="8" maxlength="120">
+  </div>
+
+<div class="m-5  form-group d-flex justify-content-center row ">
+    <label for="email-input" class="form-label">Email address</label>
+    <input  type="email" class="form-control"  placeholder="name@example.com" [(ngModel)]="model.email" name="email" #email="ngModel" email required minlength="8" maxlength="120">
+  </div>
+  <!--message d'erreur -->
+<div *ngIf="email.errors && myForm.submitted">
+    <span *ngIf="email.errors.required">L'adresse mail est requise</span>
+    <span *ngIf="email.errors.minlength"
+      >La longueur minimale doit être supérieure à 8</span
+    >
+    <span *ngIf="email.errors.maxlength"
+      >La longueur maximale doit être inférieure à 120</span
+    >
+    <span *ngIf="email.errors.email"
+      >Tu n'utilise pas la b￼
+      onne conception d'un mail</span
+    >
+</div>
+
+
+
+  <div class="m-5 form-group d-flex justify-content-center row">
+    <label for="text-input" class="form-label">Enter your message</label>
+    <textarea class="form-control" [(ngModel)]="model.message" rows="3" #message="ngModel" name="message" required minlength="3" maxlength="300"></textarea>
+  </div>
+  <div>
+    
+    <button class="m-5" type="submit">Send message</button>
+  </div>
+</form>

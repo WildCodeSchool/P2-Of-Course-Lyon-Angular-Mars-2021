@@ -2,6 +2,14 @@ body {
   margin: 0;
   background-color: #e5e5e5;
   font-family: "OpenSans", Arial, Helvetica, sans-serif;
+  width: 100vw;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  overflow-x: hidden;
 }
 
 html,

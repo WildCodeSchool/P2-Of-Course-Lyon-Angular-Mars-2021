@@ -1,0 +1,14 @@
+form {
+  width: 100vw;
+  text-align: center;
+  background: linear-gradient(#043968, #292e33);
+}
+input {
+  width: 25%;
+}
+textarea {
+  width: 25%;
+}
+label {
+  color: rgb(189, 189, 192);
+}

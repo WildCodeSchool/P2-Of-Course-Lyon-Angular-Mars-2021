@@ -11,5 +11,20 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
   }
+ openLink(url:string){
+  window.open(url)
+}
 
+toggoleShowHide = true;
+toggole = true;
+
+
+itemClicked(){
+  this.toggoleShowHide = !this.toggoleShowHide;
+  
+}
+phoneClicked(){
+  this.toggole = !this.toggole;
+  
+}
 }
