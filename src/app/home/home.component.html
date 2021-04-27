@@ -2,33 +2,65 @@
   <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://picsum.photos/id/1037/1200/800" class="d-block w-100" style="height:60vh" alt="asie">
+        <img
+          src="https://picsum.photos/id/1037/1200/800"
+          class="d-block w-100"
+          style="height: 60vh"
+          alt="asie"
+        />
       </div>
       <div class="carousel-item">
-        <img src="https://picsum.photos/id/1048/1200/800" class="d-block w-100" style="height:60vh" alt="chine">
+        <img
+          src="https://picsum.photos/id/1048/1200/800"
+          class="d-block w-100"
+          style="height: 60vh"
+          alt="chine"
+        />
       </div>
       <div class="carousel-item">
-        <img src="https://picsum.photos/id/84/1200/800" class="d-block w-100" style="height:60vh" alt="lake">
+        <img
+          src="https://picsum.photos/id/84/1200/800"
+          class="d-block w-100"
+          style="height: 60vh"
+          alt="lake"
+        />
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselHome"
+      data-bs-slide="prev"
+    >
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselHome"
+      data-bs-slide="next"
+    >
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
   </div>
   <div class="headerTextHome">
-    <h1>Looking for a travel ? <img src="../assets/logo_small.png" alt="logo of crouse" /> we have.</h1>
+    <h1>
+      Looking for a travel ?
+      <img src="../assets/logo_small.png" alt="logo of crouse" /> we have.
+    </h1>
   </div>
 </div>
 
 <div class="headerCategoriesHome">
   <h2>Some Continents</h2>
-  <hr>
+  <hr />
 </div>
 <div class="categoryList" *ngFor="let category of categories">
-  <app-category-card [title]="category.title" [descs]="category.descs" [images]="category.images"></app-category-card>
+  <app-category-card
+    [title]="category.title"
+    [descs]="category.descs"
+    [images]="category.images"
+  ></app-category-card>
 </div>

@@ -1,1 +1,130 @@
-<p>travel-list works!</p>
+<form (ngSubmit)="onSubmit()" [formGroup]="filtersForm">
+  <h3>Travel</h3>
+
+  <!-- DESTINATIONS INPUTS -->
+  <div class="input-group w-50">
+    <span class="input-group-text">Go from ... to ...</span>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="From..."
+      formControlName="fromLoc"
+    />
+    <input
+      type="text"
+      class="form-control"
+      placeholder="To..."
+      formControlName="toLoc"
+      [matAutocomplete]="cityAuto"
+      (input)="onSubmit()"
+    />
+
+    <mat-autocomplete #cityAuto="matAutocomplete" (optionSelected)="onSubmit()">
+      <span *ngIf="filtersForm.controls.toLoc.dirty">
+        <mat-option
+          *ngFor="
+            let option of getChangingOptions(
+              cityOptions,
+              filtersForm.get('toLoc').value
+            )
+          "
+          [value]="option"
+        >
+          {{ option }}
+        </mat-option>
+      </span>
+    </mat-autocomplete>
+  </div>
+
+  <!-- STATE INPUT -->
+  <div class="input-group w-50">
+    <span class="input-group-text">State</span>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="State.."
+      formControlName="state"
+      [matAutocomplete]="stateAuto"
+      (input)="onSubmit()"
+    />
+    <mat-autocomplete
+      #stateAuto="matAutocomplete"
+      (optionSelected)="onSubmit()"
+    >
+      <span *ngIf="filtersForm.controls.state.dirty">
+        <mat-option
+          *ngFor="
+            let option of getChangingOptions(
+              stateOptions,
+              filtersForm.get('state').value
+            )
+          "
+          [value]="option"
+        >
+          {{ option }}
+        </mat-option>
+      </span>
+    </mat-autocomplete>
+  </div>
+
+  <!-- CONTINENT INPUT -->
+  <div class="input-group w-50">
+    <span class="input-group-text">Continent</span>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="continent.."
+      formControlName="continent"
+      [matAutocomplete]="continentAuto"
+      (input)="onSubmit()"
+    />
+    <mat-autocomplete
+      #continentAuto="matAutocomplete"
+      (optionSelected)="onSubmit()"
+    >
+      <span *ngIf="filtersForm.controls.continent.dirty">
+        <mat-option
+          *ngFor="
+            let option of getChangingOptions(
+              contOptions,
+              filtersForm.get('continent').value
+            )
+          "
+          [value]="option"
+        >
+          {{ option }}
+        </mat-option>
+      </span>
+    </mat-autocomplete>
+  </div>
+
+  <!-- DATES INPUTS -->
+  <div class="input-group w-50">
+    <span class="input-group-text">Travel Dates</span>
+    <mat-date-range-input
+      class="form-control"
+      [rangePicker]="travelDates"
+      formGroupName="travelDates"
+    >
+      <input matStartDate placeholder="Start date" formControlName="start" />
+      <input matEndDate placeholder="End date" formControlName="end" />
+    </mat-date-range-input>
+    <mat-datepicker-toggle
+      [for]="travelDates"
+      matSuffix
+    ></mat-datepicker-toggle>
+    <mat-date-range-picker #travelDates></mat-date-range-picker>
+  </div>
+
+  <button type="submit" class="btn btn-primary w-50">Search</button>
+</form>
+
+<!-- CARDS LIST -->
+<div class="centerList">
+  <div
+    class="d-inline-flex justify-content-center"
+    *ngFor="let voyage of voyages"
+  >
+    <app-card-travel class="m-4 shadow" [voyage]="voyage"></app-card-travel>
+  </div>
+</div>
