@@ -9,11 +9,13 @@ import { Voyage } from '../common/Voyage.service';
 })
 export class TravelListComponent implements OnInit {
 
-
   voyages: Voyage[] = this.voyageService.initVoyage()
 
   filtersForm = new FormGroup({
     state: new FormControl(),
+    continent: new FormControl(),
+    toLoc: new FormControl(),
+    fromLoc: new FormControl(),
     travelDates: new FormGroup({
       start: new FormControl(),
       end: new FormControl()
@@ -50,12 +52,9 @@ export class TravelListComponent implements OnInit {
     return newTab;
   }
 
-  constructor(private voyageService: ListVoyages) { 
-    
-   }
+  constructor(private voyageService: ListVoyages) {}
 
   ngOnInit(): void {
   }
-  
 
 }
