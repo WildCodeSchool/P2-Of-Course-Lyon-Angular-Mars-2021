@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Card } from '../models/card.model';
-import { Activity } from '../models/activity.model';
+import { Voyage } from '../common/Voyage.model';
 
 @Component({
   selector: 'app-card-travel',
@@ -9,11 +8,12 @@ import { Activity } from '../models/activity.model';
 })
 export class CardTravelComponent implements OnInit {
 
-  @Input() public card:Card;
+  @Input()
+  public voyage: Voyage;
 
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 }

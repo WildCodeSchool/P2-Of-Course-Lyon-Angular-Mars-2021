@@ -1,15 +1,8 @@
 <div class="card" style="width: 18rem;">
-    <img src="{{card.picture}}" class="card-img-top" alt="image">
+    <img src="{{voyage.photo}}" class="card-img-top" alt="image">
     <div class="card-body">
-      <h4 class="card-title">{{card.title}}</h4>
-      <p class="card-text">{{card.description}}</p>
-    
-      <p class="card-text"><small class="text-muted">ref: {{card.id}}</small></p>
-      
-        <div *ngFor="let value of card.activities">
-            <app-activity [activity]="value"></app-activity>
-        </div>
-      
+      <h4 class="card-title">{{voyage.name | uppercase}}</h4>
+      <p class="card-text">{{voyage.description}}</p>
     <br>
         <div class="d-grid gap-2 col-6 mx-auto">
         <button class="btn btn-primary btn-lg" type="button">Book it</button>

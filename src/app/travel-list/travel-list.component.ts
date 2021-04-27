@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Card } from '../models/card.model';
+import { ListVoyages } from '../common/ListVoyages.service';
+import { Voyage } from '../common/Voyage.model';
 @Component({
   selector: 'app-travel-list',
   templateUrl: './travel-list.component.html',
@@ -8,38 +9,53 @@ import { Card } from '../models/card.model';
 })
 export class TravelListComponent implements OnInit {
 
-  cardList: Card[] = []
 
-  flightRound: boolean = false;
-  
+  voyages: Voyage[] = this.voyageService.initVoyage()
+
   filtersForm = new FormGroup({
-    travelLocations: new FormGroup({
-      from: new FormControl(),
-      to: new FormControl()
-    }),
+    state: new FormControl(),
     travelDates: new FormGroup({
       start: new FormControl(),
       end: new FormControl()
     }),
-    singleFlightDate: new FormControl(),
-    doubleFlightDates: new FormGroup({
-      start: new FormControl(),
-      end: new FormControl()
-    })
   })
 
+  // TODO: VERIFIER LES INPUTS ENTRE EUX (france est uniquement en europe ou avec paris)
+  cityOptions: string[] = this.voyageService.initVoyage().map((x) => x.name)
+  stateOptions: string[] = this.voyageService.initVoyage().map((x) => x.pays)
+  contOptions: string[] = this.voyageService.initVoyage().map((x) => x.continent)
+  
   onSubmit(){
-    console.log(this.filtersForm.value)
+    this.voyages = this.voyageService.initVoyage()
+    if(this.filtersForm.get('toLoc').value){
+      this.voyages = this.voyages.filter((x) => x.name.includes(this.filtersForm.get('toLoc').value))
+    }else if(this.filtersForm.get('state').value){
+      this.voyages = this.voyages.filter((x) => x.pays.includes(this.filtersForm.get('state').value))
+    }else if(this.filtersForm.get('continent').value){
+      this.voyages = this.voyages.filter((x) => x.continent.includes(this.filtersForm.get('continent').value))
+    }
   }
 
-  constructor() { }
+  getChangingOptions(array: string[], value: string): string[]{
+    let newTab: string[] = []
+    array.forEach(element => {
+      if(value){
+        if(!newTab.includes(element) && element.toLowerCase().startsWith(value.toLowerCase(), 0)){
+          newTab.push(element)
+        }else if(!newTab.includes(element) && !value){
+          newTab.push(element)
+        }
+      }
+    });
+    return newTab;
+  }
+
+  constructor(private voyageService: ListVoyages) { 
+    
+   }
 
   ngOnInit(): void {
-    this.cardList.push(
-      new Card ('Venice','assets/venice.jpeg','0034565443', 'An invitation to the "Eternal City" where you can only be amazed at the riches of the Italian capital. A weekend where we reserve you two essential visi...'),
-      new Card ('Venice','assets/venice.jpeg','0034565443', 'An invitation to the "Eternal City" where you can only be amazed at the riches of the Italian capital. A weekend where we reserve you two essential visi...'),
-      new Card ('Venice','assets/venice.jpeg','0034565443', 'An invitation to the "Eternal City" where you can only be amazed at the riches of the Italian capital. A weekend where we reserve you two essential visi...')
-    )
   }
+  
 
 }
