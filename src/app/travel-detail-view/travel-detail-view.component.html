@@ -1,18 +1,13 @@
-<div class="container" id=topMargin>
+<div *ngFor="let travel of voyage" class="container" id=topMargin >
   <div class="text-center">
     
    
-    <div><img src="assets/bali4.jpeg" class="img-fluid" alt="image" width="60%"></div>
+    <div><img src="{{travel._photo}}" class="img-fluid" alt="image" width="60%"></div>
     
     
->
-   <!--- <h1 class="titleTravel" *ngFor="let item of voyage"> {{item.name}} </h1>-->
-    <p class="lead">About this area
-      Bali is one of the most exciting destinations in Southeast Asia as it is one of the first cities in the world to implement eco-friendly planning with parks, gardens and stunning trees.
-      
-      The city-state is also a cultural melting pot shaped by Malaysian, Chinese and Indian influences. Celebrations such as the Chinese New Year, the Muslim Eid al-Fitr celebrations in June and the Hindu Deepavali festival of lights in October attract thousands of visitors every year.
-      
-      Whether you are looking for the perfect island for a family vacation, a romantic getaway, or a shopping and sightseeing excursion, Singapore has it all. With its tropical climate, friendly locals, and many shops, museums, restaurants and attractions, there are plenty of reasons to come to this city firmly focused on the future.</p>
+
+  <h1 class="titleTravel"> {{travel._name }}</h1>
+    <p class="lead"> {{travel._description}}</p>
     <hr class="my-4">
     
     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.It uses utility classes for typography and spacing to space content out within the larger container.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
@@ -21,7 +16,6 @@
     </p>
   </div>
 
-</div>
 
 
     <!--Accordion detail travel-->
@@ -30,7 +24,7 @@
   <!-- For demo purpose -->
   <div class="row py-5">
     <div class="col-lg-9 mx-auto text-black text-center">
-      <h1 class="display-4"> About this trip</h1>
+      <h1 class="display-4"> About {{travel._name}} trip</h1>
       <p class="lead mb-0">all the information relating to this trip is defined below</p>
     
     </div>
@@ -89,3 +83,4 @@
 
 <!--<button type="button" class="btn btn-primary"><i class="bi-heart-fill" style="font-size: 1rem;"></i></button>-->
 
+</div>

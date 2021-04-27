@@ -3,6 +3,8 @@ import { ListVoyages } from '../common/ListVoyages.service';
 import { Voyage } from '../common/Voyage.service';
 
 
+
+
 @Component({
   selector: 'app-travel-detail-view',
   templateUrl: './travel-detail-view.component.html',
@@ -10,13 +12,18 @@ import { Voyage } from '../common/Voyage.service';
 })
 export class TravelDetailViewComponent implements OnInit {
 
-  //@Input() vogageView : Voyage
+  @Input() vogageView : Voyage
  
- // constructor(private service: ListVoyages) { }
-//public voyage : Voyage []=[]
+public service: ListVoyages;
+public voyage : Voyage[]=[];
+constructor( listVoyage: ListVoyages ){
+  this.service = listVoyage
+  
+}
   ngOnInit(): void {
   
-  //this.voyage = this.service.getVille('New Delhi');
+ this.voyage = this.service.initVoyage();
+  //console.log(this.voyage);
  }
 
 }
