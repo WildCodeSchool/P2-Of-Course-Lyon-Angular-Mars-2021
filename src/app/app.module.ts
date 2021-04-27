@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -11,13 +10,18 @@ import { HomeComponent } from './home/home.component';
 import { TravelListComponent } from './travel-list/travel-list.component';
 import { NavbarComponent, } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+
 import { CategoryCardComponent } from './category-card/category-card.component';
+import { ContactComponent } from './contact/contact.component';
+import { ModalconnexionComponent } from './modalconnexion/modalconnexion.component';
+
 import { route } from './app.route';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDatepicker, MatDatepickerModule, MatDateRangeInput, MatDateRangePicker } from '@angular/material/datepicker'
+import { MatDatepickerModule, MatDateRangeInput, MatDateRangePicker } from '@angular/material/datepicker'
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { TravelDetailViewComponent } from './travel-detail-view/travel-detail-view.component';
 
 
@@ -33,6 +37,8 @@ import { TravelDetailViewComponent } from './travel-detail-view/travel-detail-vi
     CategoryCardComponent,
     TravelDetailViewComponent,
     
+    ContactComponent,
+    ModalconnexionComponent
   ],
   imports: [
     FormsModule,
@@ -43,7 +49,8 @@ import { TravelDetailViewComponent } from './travel-detail-view/travel-detail-vi
     MatDatepickerModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent],

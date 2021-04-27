@@ -8,9 +8,10 @@ import { Voyage } from './Voyage.service';
 export class ListVoyages {
   
   constructor() {}
-  public _listDeVoyages: Voyage[] = [];
+  public _listDeVoyages: Voyage[];
 
   public initVoyage() {
+    this._listDeVoyages = []
     this._listDeVoyages.push(
       new Voyage(
         'asie',

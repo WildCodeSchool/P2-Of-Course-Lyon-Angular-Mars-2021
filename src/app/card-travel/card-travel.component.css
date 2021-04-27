@@ -1,3 +1,8 @@
 .card {
   text-align: center;
+  margin: 2rem;
+  box-shadow: 0px 0px 10px black;
+}
+.card-img-top {
+  height: 10rem;
 }
