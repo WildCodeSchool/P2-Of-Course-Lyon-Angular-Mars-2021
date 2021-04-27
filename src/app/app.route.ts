@@ -8,6 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 
 import { ModalconnexionComponent } from './modalconnexion/modalconnexion.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { TravelDetailViewComponent } from './travel-detail-view/travel-detail-view.component';
 
 export const route: Routes = [
 
@@ -19,7 +20,8 @@ export const route: Routes = [
 { path: 'contact', component: ContactComponent},
 { path: 'modalconnexion', component: ModalconnexionComponent },
 {path: '404', component: NotfoundComponent},
-{path: '**', redirectTo: '/404'}
+{path: '**', redirectTo: '/404'},
+{ path: 'detailsVoyages', component: TravelDetailViewComponent }
 ];
 
 

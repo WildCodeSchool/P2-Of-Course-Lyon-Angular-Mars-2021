@@ -1,0 +1,28 @@
+<div class="centerDetails">
+  <button
+    style="margin: 2rem"
+    type="button"
+    class="btn btn-primary"
+    [routerLink]="['/travel-list']"
+  >
+    Retour
+  </button>
+  <img [src]="travel._photo" [alt]="travel._name" />
+  <h1>{{ travel._name | uppercase }}</h1>
+  <h3>{{ travel._pays }}</h3>
+  <p>
+    {{ travel._description }}
+  </p>
+
+  <!-- CARD AJOUT PANIER -->
+  <div class="card text-center w-100" style="margin-bottom: 2rem">
+    <div class="card-header">Informations</div>
+    <div class="card-body">
+      <h5 class="card-title">Date du voyage: {{ travel._date }}</h5>
+      <p class="card-text">
+        {{ travel._description }}
+      </p>
+      <a href="#" class="btn btn-primary">Ajouter au panier</a>
+    </div>
+  </div>
+</div>

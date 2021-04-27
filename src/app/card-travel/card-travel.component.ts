@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ListVoyages } from '../common/ListVoyages.service';
 import { Voyage } from '../common/Voyage.model';
 
 @Component({
@@ -8,10 +9,13 @@ import { Voyage } from '../common/Voyage.model';
 })
 export class CardTravelComponent implements OnInit {
 
-  @Input()
-  public voyage: Voyage;
+  @Input() voyage: Voyage;
 
-  constructor() { }
+  constructor(private service: ListVoyages) { }
+
+  onVoyageClick(){
+    this.service.setCurrentDetailsVoyage(this.voyage)
+  }
 
   ngOnInit(): void {
 

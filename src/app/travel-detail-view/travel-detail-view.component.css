@@ -1,0 +1,11 @@
+.centerDetails {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.centerDetails img {
+  width: 40rem;
+  margin-bottom: 2rem;
+}
