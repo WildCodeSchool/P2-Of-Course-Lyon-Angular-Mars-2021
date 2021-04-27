@@ -1,162 +1,28 @@
-<div class="text-center" (getVoyage)="getVoyageValue($event)">
-  <div>
-    <img [src]="travel._photo" class="img-fluid" alt="image" width="60%" />
-  </div>
-  <h1 class="titleTravel">{{ travel._name }}</h1>
-  <p class="lead">{{ travel._description }}</p>
-  <hr class="my-4" />
-
+<div class="centerDetails">
+  <button
+    style="margin: 2rem"
+    type="button"
+    class="btn btn-primary"
+    [routerLink]="['/travel-list']"
+  >
+    Retour
+  </button>
+  <img [src]="travel._photo" [alt]="travel._name" />
+  <h1>{{ travel._name | uppercase }}</h1>
+  <h3>{{ travel._pays }}</h3>
   <p>
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-    roots in a piece of classical Latin literature from 45 BC, making it over
-    2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-    College in Virginia, looked up one of the more obscure Latin words,
-    consectetur, from a Lorem Ipsum passage, and going through the cites of the
-    word in classical literature, discovered the undoubtable source. Lorem Ipsum
-    comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-    (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-    treatise on the theory of ethics, very popular during the Renaissance. The
-    first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-    in section 1.10.32.It uses utility classes for typography and spacing to
-    space content out within the larger container.Contrary to popular belief,
-    Lorem Ipsum is not simply random text. It has roots in a piece of classical
-    Latin literature from 45 BC, making it over 2000 years old. Richard
-    McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked
-    up one of the more obscure Latin words, consectetur, from a Lorem Ipsum
-    passage, and going through the cites of the word in classical literature,
-    discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
-    and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
-    Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of
-    ethics, very popular during the Renaissance. The first line of Lorem Ipsum,
-    "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+    {{ travel._description }}
   </p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Book now</a>
-  </p>
-</div>
 
-<!--Accordion detail travel-->
-
-<div class="container">
-  <!-- For demo purpose -->
-  <div class="row py-5">
-    <div class="col-lg-9 mx-auto text-black text-center">
-      <h1 class="display-4">About {{ travel._name }} trip</h1>
-      <p class="lead mb-0">
-        all the information relating to this trip is defined below
+  <!-- CARD AJOUT PANIER -->
+  <div class="card text-center w-100" style="margin-bottom: 2rem">
+    <div class="card-header">Informations</div>
+    <div class="card-body">
+      <h5 class="card-title">Date du voyage: {{ travel._date }}</h5>
+      <p class="card-text">
+        {{ travel._description }}
       </p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-9 mx-auto">
-      <!-- Accordion -->
-      <div id="accordionExample" class="accordion shadow">
-        <!-- Accordion item 1 -->
-        <div class="card">
-          <div id="headingOne" class="card-header bg-white shadow-sm border-0">
-            <h6 class="mb-0 font-weight-bold">
-              <a
-                href="#"
-                data-toggle="collapse"
-                data-target="#collapseOne"
-                aria-expanded="true"
-                aria-controls="collapseOne"
-                class="d-block position-relative text-dark text-uppercase collapsible-link py-2"
-                >Attractions</a
-              >
-            </h6>
-          </div>
-          <div
-            id="collapseOne"
-            aria-labelledby="headingOne"
-            data-parent="#accordionExample"
-            class="collapse show"
-          >
-            <div class="card-body p-5">
-              <p class="font-weight-light m-0">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life
-                accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                non cupidatat skateboard dolor brunch. Food truck quinoa
-                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
-                put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Accordion item 2 -->
-        <div class="card">
-          <div id="headingTwo" class="card-header bg-white shadow-sm border-0">
-            <h6 class="mb-0 font-weight-bold">
-              <a
-                href="#"
-                data-toggle="collapse"
-                data-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo"
-                class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2"
-                >Cleaning and safety practices</a
-              >
-            </h6>
-          </div>
-          <div
-            id="collapseTwo"
-            aria-labelledby="headingTwo"
-            data-parent="#accordionExample"
-            class="collapse"
-          >
-            <div class="card-body p-5">
-              <p class="font-weight-light m-0">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life
-                accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                non cupidatat skateboard dolor brunch. Food truck quinoa
-                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
-                put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Accordion item 3 -->
-        <div class="card">
-          <div
-            id="headingThree"
-            class="card-header bg-white shadow-sm border-0"
-          >
-            <h6 class="mb-0 font-weight-bold">
-              <a
-                href="#"
-                data-toggle="collapse"
-                data-target="#collapseThree"
-                aria-expanded="false"
-                aria-controls="collapseThree"
-                class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2"
-                >Important information</a
-              >
-            </h6>
-          </div>
-          <div
-            id="collapseThree"
-            aria-labelledby="headingThree"
-            data-parent="#accordionExample"
-            class="collapse"
-          >
-            <div class="card-body p-5">
-              <p class="font-weight-light m-0">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life
-                accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                non cupidatat skateboard dolor brunch. Food truck quinoa
-                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
-                put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <a href="#" class="btn btn-primary">Ajouter au panier</a>
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
-import { convertActionBinding } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Injectable } from '@angular/core';
 import { Voyage } from './Voyage.model';
+import { defaultVoyages } from './voyages-mok';
 
 @Injectable({
   providedIn:'root'
@@ -10,80 +10,14 @@ export class ListVoyages {
   constructor() {}
   public _listDeVoyages: Voyage[];
 
+  public currentDetailsVoyage: Voyage;
+
+  public setCurrentDetailsVoyage(voyage: Voyage){
+    this.currentDetailsVoyage = voyage
+  }
+
   public initVoyage() {
-    this._listDeVoyages = []
-    this._listDeVoyages.push(
-      new Voyage(
-        'asie',
-        'japon',
-        'pekin',
-        'voyage a pekin',
-        '../../assets/img/japon.png'
-      ),
-      new Voyage(
-        'asie',
-        'inde',
-        'new delhi',
-        'voyage a new delhi',
-        '../../assets/img/New-Delhi-.jpeg'
-      ),
-      new Voyage(
-        'europe',
-        'espagne',
-        'madrid',
-        'voyage a madrid',
-        '../../assets/img/madrid.webp'
-      ),
-      new Voyage(
-        'europe',
-        'france',
-        'paris',
-        'voyage a paris',
-        '../../assets/img/paris.jpeg'
-      ),
-      new Voyage(
-        'amerique',
-        'etats-unis',
-        'miami',
-        'voyage a miami',
-        '../../assets/img/miami.jpeg'
-      ),
-      new Voyage(
-        'amerique',
-        'etats-unis',
-        'orlondo',
-        'voyage a orlondo',
-        '../../assets/img/orlondo.jpeg'
-      ),
-      new Voyage(
-        'amerique',
-        'brésil',
-        'rio ',
-        'voyage a rio',
-        '../../assets/img/bresil.jpeg'
-      ),
-      new Voyage(
-        'afrique',
-        'egypte',
-        'caire',
-        'voyage au Caire',
-        '../../assets/img/egypte.webp'
-      ),
-      new Voyage(
-        'afrique',
-        'maroc',
-        'marrakech',
-        'voyage a marrakech',
-        '../../assets/img/marrakech.jpeg'
-      ),
-      new Voyage(
-        'europe',
-        'italie',
-        'rome',
-        'voyage a rome',
-        '../../assets/img/Rome.jpeg'
-      )
-    );
+    this._listDeVoyages = defaultVoyages
     return this._listDeVoyages;
   }
 

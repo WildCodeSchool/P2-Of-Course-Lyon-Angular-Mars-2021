@@ -14,6 +14,9 @@ export class TravelListComponent implements OnInit {
 
   filtersForm = new FormGroup({
     state: new FormControl(),
+    fromLoc: new FormControl(),
+    toLoc: new FormControl(),
+    continent: new FormControl(),
     travelDates: new FormGroup({
       start: new FormControl(),
       end: new FormControl()

@@ -1,13 +1,18 @@
-<div class="card" style="width: 18rem;">
-    <img src="{{voyage.photo}}" class="card-img-top" alt="image">
-    <div class="card-body">
-      <h4 class="card-title">{{voyage.name | uppercase}}</h4>
-      <p class="card-text">{{voyage.description}}</p>
-    <br>
-        <div class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-primary btn-lg" type="button" (click)="onVoyageClick()" >Book it</button>
-        </div>
-      
+<div class="card" style="width: 18rem">
+  <img src="{{ voyage._photo }}" class="card-img-top" alt="image" />
+  <div class="card-body">
+    <h4 class="card-title">{{ voyage._name | uppercase }}</h4>
+    <p class="card-text">{{ voyage._description }}</p>
+    <br />
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button
+        class="btn btn-primary btn-lg"
+        type="button"
+        (click)="onVoyageClick()"
+        [routerLink]="['/detailsVoyages']"
+      >
+        Book it
+      </button>
     </div>
-
+  </div>
 </div>

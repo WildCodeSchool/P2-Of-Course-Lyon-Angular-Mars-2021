@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ListVoyages } from '../common/ListVoyages.service';
 import { Voyage } from '../common/Voyage.model';
 
 @Component({
@@ -8,11 +9,9 @@ import { Voyage } from '../common/Voyage.model';
 })
 export class TravelDetailViewComponent implements OnInit {
 
-  @Input() travel : Voyage;
+  constructor(private service: ListVoyages){}
 
-  getVoyageValue($event: Voyage){
-    this.travel = $event
-  }
+  travel : Voyage = this.service.currentDetailsVoyage;
 
   ngOnInit(): void {
   }

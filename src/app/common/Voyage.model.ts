@@ -5,6 +5,7 @@ export class Voyage {
   public _name: string ;
   public _description: string ;
   public _photo: string ;
+  public _date: string;
   
   
 
@@ -14,6 +15,7 @@ export class Voyage {
     name: string,
     description: string,
     photo: string,
+    date: string
   ) {
     this._id;
     this._continent = continent;
@@ -21,6 +23,7 @@ export class Voyage {
     this._name = name;
     this._description = description;
     this._photo = photo;
+    this._date = date;
   }
   
 }
