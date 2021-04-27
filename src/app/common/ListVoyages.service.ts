@@ -91,7 +91,7 @@ export class ListVoyages {
     const tableauAm: Voyage[] = [];
     const continentLowC = continent.toLocaleLowerCase()
     this._listDeVoyages.forEach((element) => {
-      if (element.continent === continentLowC) {
+      if (element._continent === continentLowC) {
         tableauAm.push(element);
       }
     });
@@ -103,7 +103,7 @@ export class ListVoyages {
     const tableauP: Voyage[] = [];
     const paysLowC = pays.toLocaleLowerCase();
     this._listDeVoyages.forEach((element) => {
-      if (element.pays === paysLowC) {
+      if (element._pays === paysLowC) {
         tableauP.push(element);
       }
     });
@@ -113,7 +113,7 @@ export class ListVoyages {
     const tableauV: Voyage[] = [];
     const villeLowC = ville.toLocaleLowerCase();
     this._listDeVoyages.forEach((element) => {
-      if (element.name === villeLowC) {
+      if (element._name === villeLowC) {
         tableauV.push(element);
       }
     });

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Voyage } from '../common/Voyage.service';
 
 @Component({
@@ -8,10 +8,14 @@ import { Voyage } from '../common/Voyage.service';
 })
 export class CardTravelComponent implements OnInit {
 
-  @Input()
-  public voyage: Voyage;
+  @Input() voyage: Voyage;
+  @Output() getVoyage: EventEmitter<Voyage> = new EventEmitter()
 
   constructor() { }
+
+  onVoyageClick(){
+    this.getVoyage.emit(this.voyage)
+  }
 
   ngOnInit(): void {
 
