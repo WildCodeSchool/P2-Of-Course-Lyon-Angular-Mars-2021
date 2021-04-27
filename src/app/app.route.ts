@@ -19,9 +19,9 @@ export const route: Routes = [
 { path: 'footer', component: FooterComponent },
 { path: 'contact', component: ContactComponent},
 { path: 'modalconnexion', component: ModalconnexionComponent },
+{ path: 'detailsVoyages', component: TravelDetailViewComponent },
 {path: '404', component: NotfoundComponent},
 {path: '**', redirectTo: '/404'},
-{ path: 'detailsVoyages', component: TravelDetailViewComponent }
 ];
 
 
