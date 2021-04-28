@@ -45,9 +45,7 @@ import { ContinentListComponent } from './continent-list/continent-list.componen
     ContinentListComponent
   ],
   imports: [
-    FormsModule,
     BrowserModule,
-    FormsModule,
     RouterModule.forRoot(route),
     BrowserAnimationsModule,
     MatDatepickerModule,
