@@ -24,6 +24,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { TravelDetailViewComponent } from './travel-detail-view/travel-detail-view.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { ContinentListComponent } from './continent-list/continent-list.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     
     ContactComponent,
     ModalconnexionComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    ContinentListComponent
   ],
   imports: [
     FormsModule,
