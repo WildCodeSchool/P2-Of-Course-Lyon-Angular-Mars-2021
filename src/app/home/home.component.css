@@ -8,3 +8,30 @@
 .headerTextHome img {
   width: 5em;
 }
+.about {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 8rem;
+  margin-bottom: 4rem;
+}
+.about img {
+  border-radius: 100%;
+  width: 100px;
+}
+.team {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.person {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem;
+}
