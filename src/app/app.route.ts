@@ -7,6 +7,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { ModalconnexionComponent } from './modalconnexion/modalconnexion.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { TravelDetailViewComponent } from './travel-detail-view/travel-detail-view.component';
+import { ContinentListComponent } from './continent-list/continent-list.component';
 
 export const route: Routes = [
 
@@ -16,7 +19,11 @@ export const route: Routes = [
 { path: 'navbar', component: NavbarComponent },
 { path: 'footer', component: FooterComponent },
 { path: 'contact', component: ContactComponent},
-{ path: 'modalconnexion', component: ModalconnexionComponent }
+{ path: 'modalconnexion', component: ModalconnexionComponent },
+{ path: 'detailsVoyages', component: TravelDetailViewComponent },
+{ path: 'continents-list', component: ContinentListComponent },
+{path: '404', component: NotfoundComponent},
+{path: '**', redirectTo: '/404'},
 ];
 
 

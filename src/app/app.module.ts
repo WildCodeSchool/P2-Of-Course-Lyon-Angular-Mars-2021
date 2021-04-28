@@ -21,6 +21,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule, MatDateRangeInput, MatDateRangePicker } from '@angular/material/datepicker'
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { TravelDetailViewComponent } from './travel-detail-view/travel-detail-view.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { ContinentListComponent } from './continent-list/continent-list.component';
+
 
 @NgModule({
   declarations: [
@@ -32,8 +37,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     NavbarComponent,
     FooterComponent,
     CategoryCardComponent,
+    TravelDetailViewComponent,
+    
     ContactComponent,
-    ModalconnexionComponent
+    ModalconnexionComponent,
+    NotfoundComponent,
+    ContinentListComponent
   ],
   imports: [
     FormsModule,
@@ -44,7 +53,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatDatepickerModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent],

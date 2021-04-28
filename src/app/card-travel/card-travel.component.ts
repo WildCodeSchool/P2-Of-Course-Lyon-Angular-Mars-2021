@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Card } from '../models/card.model';
-import { Activity } from '../models/activity.model';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ListVoyages } from '../common/ListVoyages.service';
+import { Voyage } from '../common/Voyage.model';
 
 @Component({
   selector: 'app-card-travel',
@@ -9,11 +9,15 @@ import { Activity } from '../models/activity.model';
 })
 export class CardTravelComponent implements OnInit {
 
-  @Input() public card:Card;
+  @Input() voyage: Voyage;
 
-  constructor() { }
+  constructor(private service: ListVoyages) { }
+
+  onVoyageClick(){
+    this.service.setCurrentDetailsVoyage(this.voyage)
+  }
 
   ngOnInit(): void {
-    
+
   }
 }

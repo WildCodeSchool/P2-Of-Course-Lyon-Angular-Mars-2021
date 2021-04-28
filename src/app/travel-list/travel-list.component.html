@@ -1,56 +1,130 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="filtersForm">
+  <h3>Travel</h3>
 
-    <h3>Travel</h3>
-    <div class="input-group w-50" formGroupName="travelLocations" >
-        <span class="input-group-text">Go from ... to ...</span>
-        <input type="text" class="form-control" placeholder="From..." formControlName="from" >
-        <input type="text" class="form-control" placeholder="To..." formControlName="to" >
-    </div>
-    <select class="form-select w-50">
-        <option selected>Filter by state</option>
-        <option value="france">France</option>
-        <option value="spain">Spain</option>
-        <option value="italia">Italia</option>
-    </select>
-    <div class="input-group w-50">
-        <span class="input-group-text">Travel Dates</span>
-        <mat-date-range-input class="form-control" [rangePicker]="travelDates" formGroupName="travelDates">
-            <input matStartDate placeholder="Start date" formControlName="start" >
-            <input matEndDate placeholder="End date" formControlName="end">
-        </mat-date-range-input>
-        <mat-datepicker-toggle [for]="travelDates" matSuffix ></mat-datepicker-toggle>
-        <mat-date-range-picker #travelDates></mat-date-range-picker>
-    </div>
+  <!-- DESTINATIONS INPUTS -->
+  <div class="input-group w-50">
+    <span class="input-group-text">Go from ... to ...</span>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="From..."
+      formControlName="fromLoc"
+    />
+    <input
+      type="text"
+      class="form-control"
+      placeholder="To..."
+      formControlName="toLoc"
+      [matAutocomplete]="cityAuto"
+      (input)="onSubmit()"
+    />
 
-    <h3>Flight</h3>
-    <div class="form-check form-switch w-50">
-        <input class="form-check-input" type="checkbox" id="flightType" [checked]="flightRound" (change)="flightRound = !flightRound" >
-        <label class="form-check-label" for="flightType">Round trip</label>
-    </div>
-    <!-- DATE ALLER SIMPLE -->
-    <div *ngIf="!flightRound" class="input-group w-50">
-        <span class="input-group-text">Flight Date</span>
-        <input matInput class="form-control" [matDatepicker]="simpleFlightDate" formControlName="singleFlightDate">
-        <mat-datepicker-toggle [for]="simpleFlightDate" matSuffix ></mat-datepicker-toggle>
-        <mat-datepicker #simpleFlightDate></mat-datepicker>
-    </div>
-    <!-- DATE ALLER RETOUR -->
-    <div *ngIf="flightRound" class="input-group w-50">
-        <span class="input-group-text">Flight Dates</span>
-        <mat-date-range-input class="form-control" [rangePicker]="doubleFlightDates" formGroupName="doubleFlightDates">
-            <input matStartDate placeholder="Start date" formControlName="start">
-            <input matEndDate placeholder="End date" formControlName="end">
-        </mat-date-range-input>
-        <mat-datepicker-toggle [for]="doubleFlightDates" matSuffix ></mat-datepicker-toggle>
-        <mat-date-range-picker #doubleFlightDates></mat-date-range-picker>
-    </div>
+    <mat-autocomplete #cityAuto="matAutocomplete" (optionSelected)="onSubmit()">
+      <span *ngIf="filtersForm.controls.toLoc.dirty">
+        <mat-option
+          *ngFor="
+            let option of getChangingOptions(
+              cityOptions,
+              filtersForm.get('toLoc').value
+            )
+          "
+          [value]="option"
+        >
+          {{ option }}
+        </mat-option>
+      </span>
+    </mat-autocomplete>
+  </div>
 
-    <button type="submit" class="btn btn-primary w-50">
-        Search
-    </button>
+  <!-- STATE INPUT -->
+  <div class="input-group w-50">
+    <span class="input-group-text">State</span>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="State.."
+      formControlName="state"
+      [matAutocomplete]="stateAuto"
+      (input)="onSubmit()"
+    />
+    <mat-autocomplete
+      #stateAuto="matAutocomplete"
+      (optionSelected)="onSubmit()"
+    >
+      <span *ngIf="filtersForm.controls.state.dirty">
+        <mat-option
+          *ngFor="
+            let option of getChangingOptions(
+              stateOptions,
+              filtersForm.get('state').value
+            )
+          "
+          [value]="option"
+        >
+          {{ option }}
+        </mat-option>
+      </span>
+    </mat-autocomplete>
+  </div>
 
+  <!-- CONTINENT INPUT -->
+  <div class="input-group w-50">
+    <span class="input-group-text">Continent</span>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="continent.."
+      formControlName="continent"
+      [matAutocomplete]="continentAuto"
+      (input)="onSubmit()"
+    />
+    <mat-autocomplete
+      #continentAuto="matAutocomplete"
+      (optionSelected)="onSubmit()"
+    >
+      <span *ngIf="filtersForm.controls.continent.dirty">
+        <mat-option
+          *ngFor="
+            let option of getChangingOptions(
+              contOptions,
+              filtersForm.get('continent').value
+            )
+          "
+          [value]="option"
+        >
+          {{ option }}
+        </mat-option>
+      </span>
+    </mat-autocomplete>
+  </div>
+
+  <!-- DATES INPUTS -->
+  <div class="input-group w-50">
+    <span class="input-group-text">Travel Dates</span>
+    <mat-date-range-input
+      class="form-control"
+      [rangePicker]="travelDates"
+      formGroupName="travelDates"
+    >
+      <input matStartDate placeholder="Start date" formControlName="start" />
+      <input matEndDate placeholder="End date" formControlName="end" />
+    </mat-date-range-input>
+    <mat-datepicker-toggle
+      [for]="travelDates"
+      matSuffix
+    ></mat-datepicker-toggle>
+    <mat-date-range-picker #travelDates></mat-date-range-picker>
+  </div>
+
+  <button type="submit" class="btn btn-primary w-50">Search</button>
 </form>
 
-<div class="cardList" *ngFor="let cardItem of cardList">
-    <app-card-travel [card]="cardItem" ></app-card-travel>
+<!-- CARDS LIST -->
+<div class="centerList">
+  <div
+    class="d-inline-flex justify-content-center"
+    *ngFor="let voyage of voyages"
+  >
+    <app-card-travel class="m-4 shadow" [voyage]="voyage"></app-card-travel>
+  </div>
 </div>
