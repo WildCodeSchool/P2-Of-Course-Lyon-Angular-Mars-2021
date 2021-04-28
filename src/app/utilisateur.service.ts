@@ -6,9 +6,8 @@ import { Utilisateur } from './utilisateur.model';
 })
 export class UtilisateurService {
 
-private utilisateur:Utilisateur[] = []
-
-
+  
 
   constructor() { }
+
 }
