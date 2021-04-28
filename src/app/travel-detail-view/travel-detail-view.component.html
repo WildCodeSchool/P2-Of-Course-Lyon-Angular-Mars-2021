@@ -9,16 +9,13 @@
   </button>
   <img [src]="travel._photo" [alt]="travel._name" />
   <h1>{{ travel._name | uppercase }}</h1>
-  <h3>{{ travel._pays }}</h3>
-  <p>
-    {{ travel._description }}
-  </p>
+  <h3>{{ travel._pays | uppercase }}</h3>
 
   <!-- CARD AJOUT PANIER -->
   <div class="card text-center w-100" style="margin-bottom: 2rem">
     <div class="card-header">Informations</div>
     <div class="card-body">
-      <h5 class="card-title">Date du voyage: {{ travel._date }}</h5>
+      <h5 class="card-title">Date of travel: {{ travel._date }}</h5>
       <p class="card-text">
         {{ travel._description }}
       </p>

@@ -2,7 +2,7 @@
   <img src="{{ voyage._photo }}" class="card-img-top" alt="image" />
   <div class="card-body">
     <h4 class="card-title">{{ voyage._name | uppercase }}</h4>
-    <p class="card-text">{{ voyage._description }}</p>
+    <p class="card-text">{{ voyage._description | ministring: 50 }}</p>
     <br />
     <div class="d-grid gap-2 col-6 mx-auto">
       <button
@@ -11,7 +11,7 @@
         (click)="onVoyageClick()"
         [routerLink]="['/detailsVoyages']"
       >
-        Book it
+        see more
       </button>
     </div>
   </div>
