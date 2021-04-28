@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ListVoyages } from '../common/ListVoyages.service';
 
 @Component({
   selector: 'app-modalconnexion',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalconnexionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ListVoyages) { }
+
+  signup = new FormGroup({
+    email: new FormControl(),
+    password: new FormControl()
+  })
 
   ngOnInit(): void {
   }
