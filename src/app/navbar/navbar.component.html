@@ -52,13 +52,17 @@
 
    <div id="btn">
       <nav>
-         <ul>
-            <li>
+         <ul onmouseover = montre()>
+            <li> 
                <a [routerLink]="['/home']">home</a>
                <span></span><span></span><span></span><span></span>
             </li>
+            <li> 
+               <a [routerLink]="['/continents-list']">continents</a>
+               <span></span><span></span><span></span><span></span>
+            </li>
             <li>
-               <a [routerLink]="['/travel-list']">travel-list</a>
+               <a [routerLink]="['/travel-list']">travels</a>
                <span></span><span></span><span></span><span></span>
             </li>
             <li>
@@ -67,16 +71,23 @@
             </li>
             <li>
                <a [routerLink]="['/modalconnexion']">SIGN UP</a>
+               <span></span><span></span><span></span><span></span>
             </li>
-            <div id="search">
+
+   
+
+
+<div id="search">
                <label for="site-search"></label>
                <input type="search" id="site-search" name="q" aria-label="Search through site content">
-               <button>✈️</button>
+               <button id="btnsearch">🔎</button>
             </div>
-
-         </ul>
+          </ul>
       </nav>
    </div>
+
+
+   
 </header>
 
 <router-outlet></router-outlet>
