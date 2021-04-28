@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ListVoyages } from '../common/ListVoyages.service';
+import { Router } from '@angular/router';
+import { UtilisateurService } from '../utilisateur.service';
 
 @Component({
   selector: 'app-modalconnexion',
@@ -9,12 +10,22 @@ import { ListVoyages } from '../common/ListVoyages.service';
 })
 export class ModalconnexionComponent implements OnInit {
 
-  constructor(private service: ListVoyages) { }
+  constructor(private service: UtilisateurService, private router: Router) { }
 
   signup = new FormGroup({
     email: new FormControl(),
     password: new FormControl()
   })
+
+  isUserConnected: boolean = this.service.isUserConnected
+
+  onSubmit(){
+    this.service.connectUser(this.signup.value['email'], this.signup.value['password'])
+    this.isUserConnected = this.service.isUserConnected
+    if(this.isUserConnected === true){
+      this.router.navigateByUrl("/profil")
+    }
+  }
 
   ngOnInit(): void {
   }
