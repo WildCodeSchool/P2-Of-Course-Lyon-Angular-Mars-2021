@@ -47,9 +47,7 @@ import { MinistringPipe } from './common/ministring.pipe';
     ContinentListComponent
   ],
   imports: [
-    FormsModule,
     BrowserModule,
-    FormsModule,
     RouterModule.forRoot(route),
     BrowserAnimationsModule,
     MatDatepickerModule,
