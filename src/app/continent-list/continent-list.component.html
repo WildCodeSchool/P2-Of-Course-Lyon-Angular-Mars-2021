@@ -1,0 +1,11 @@
+<div class="headerCategoriesHome">
+  <h2>Some Continents</h2>
+  <hr />
+</div>
+<div class="categoryList" *ngFor="let category of categories">
+  <app-category-card
+    [title]="category.title"
+    [descs]="category.descs"
+    [images]="category.images"
+  ></app-category-card>
+</div>
