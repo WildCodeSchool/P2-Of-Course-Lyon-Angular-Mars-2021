@@ -19,6 +19,6 @@ export class UtilisateurService {
     if(user.password === password){
       this.connectedUser=user
       this.isUserConnected=true
-    };   
+    };  
   }
 }
