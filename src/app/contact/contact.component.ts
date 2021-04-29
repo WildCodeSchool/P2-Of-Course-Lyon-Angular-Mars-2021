@@ -29,11 +29,14 @@ export class ContactComponent implements OnInit {
 
   onSubmit() {
     // Get form value as JSON object
-    this.bodyOfMessage = this.formulaire.get('message').value
+    
     console.log(this.bodyOfMessage)
-    this.mailto="mailto:mohamedboussaid69700@hotmail.fr?subject=demande d'information&cc=partenaire@hotmail.fr&bcc=avocat@hotmail.fr&body=" + this.bodyOfMessage;
     console.log(this.formulaire)
     console.log(this.mailto)
     console.log(this.bodyOfMessage)
+  }
+  onMessageChange(){
+    this.bodyOfMessage = this.formulaire.get('message').value
+    this.mailto="mailto:contact@ofcourse.fr?subject=demande d'information&cc=contact@ofcourse.fr&bcc=contact@ofcourse.fr&body=" + this.bodyOfMessage;
   }
 }
