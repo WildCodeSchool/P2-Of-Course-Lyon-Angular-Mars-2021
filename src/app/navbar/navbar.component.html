@@ -111,7 +111,8 @@
           <span></span><span></span><span></span><span></span>
         </li>
         <li>
-          <a [routerLink]="['/modalconnexion']">SIGN UP</a>
+          <a *ngIf="!isConnected" [routerLink]="['/modalconnexion']">SIGN UP</a>
+          <a *ngIf="isConnected" [routerLink]="['/profil']">PROFILE</a>
           <span></span><span></span><span></span><span></span>
         </li>
 
