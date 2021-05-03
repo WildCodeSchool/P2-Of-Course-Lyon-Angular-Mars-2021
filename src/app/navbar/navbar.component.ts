@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ListVoyages } from '../common/ListVoyages.service';
 import { UtilisateurService } from '../utilisateur.service';
@@ -9,6 +9,12 @@ import { UtilisateurService } from '../utilisateur.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  constructor(
+    private service: UtilisateurService,
+    private travelService: ListVoyages,
+    private route: Router
+  ) {}
+
   Logo = {
     nuageUn: '../assets/nuage1.png',
     nuage: '../assets/nuage.png',
@@ -17,12 +23,6 @@ export class NavbarComponent implements OnInit {
   };
 
   search: string = '';
-
-  constructor(
-    private service: UtilisateurService,
-    private travelService: ListVoyages,
-    private route: Router
-  ) {}
 
   // boolean si le user est connecté (depuis le service)
   isConnected: boolean = this.service.connectUtils.isConnected;
