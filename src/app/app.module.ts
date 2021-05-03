@@ -8,7 +8,7 @@ import { ActivityComponent } from './activity/activity.component';
 
 import { HomeComponent } from './home/home.component';
 import { TravelListComponent } from './travel-list/travel-list.component';
-import { NavbarComponent, } from './navbar/navbar.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { CategoryCardComponent } from './category-card/category-card.component';
@@ -18,10 +18,14 @@ import { ModalconnexionComponent } from './modalconnexion/modalconnexion.compone
 import { route } from './app.route';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDatepickerModule, MatDateRangeInput, MatDateRangePicker } from '@angular/material/datepicker'
+import {
+  MatDatepickerModule,
+  MatDateRangeInput,
+  MatDateRangePicker,
+} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { TravelDetailViewComponent } from './travel-detail-view/travel-detail-view.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ContinentListComponent } from './continent-list/continent-list.component';
@@ -41,13 +45,13 @@ import { ProfileComponent } from './profile/profile.component';
     CategoryCardComponent,
     TravelDetailViewComponent,
     MinistringPipe,
-    
+
     ContactComponent,
     ModalconnexionComponent,
     NotfoundComponent,
     ContinentListComponent,
     CardsComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,11 +60,12 @@ import { ProfileComponent } from './profile/profile.component';
     MatDatepickerModule,
     MatNativeDateModule,
     ReactiveFormsModule,
+    FormsModule,
     MatFormFieldModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [MatDateRangeInput, MatDateRangePicker]
+  entryComponents: [MatDateRangeInput, MatDateRangePicker],
 })
-export class AppModule { }
+export class AppModule {}
