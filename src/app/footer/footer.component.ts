@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ReseauxList } from '../common/res-sociaux-service';
+import { SocialMedia } from '../models/social.model';
 
 @Component({
   selector: 'app-footer',
@@ -7,30 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  resSociaux:SocialMedia[]=[]
 
-  dateCopyright: number= (new Date()).getFullYear()
+  dateCopyright: number;
+
+  constructor(private service : ReseauxList) { }
+
+  
 
  
-ngOnInit() {
-  
-  
-}
- openLink(url:string){
-  window.open(url)
-}
+ ngOnInit() {
+  this.dateCopyright = new Date().getFullYear()
+  this.resSociaux=this.service.initReseaux()
 
-toggoleShowHide = true;
-toggole = true;
-
-
-itemClicked(){
-  this.toggoleShowHide = !this.toggoleShowHide;
-  
-}
-phoneClicked(){
-  this.toggole = !this.toggole;
-  
-}
-
-}
+ 
+ }
+ 
+ }
