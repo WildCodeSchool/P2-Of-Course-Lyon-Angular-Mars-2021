@@ -1,91 +1,132 @@
 <header id="nav">
+  <div id="logo">
+    <div id="bou4">
+      <marquee
+        frameborder="10"
+        behavior="scroll"
+        direction="right"
+        width="100%"
+        scrollamount="2 "
+      >
+        <img
+          [src]="Logo.nuageUn"
+          id="nuage4"
+          alt="nuage animé"
+          height="50"
+          width="100"
+        />
+      </marquee>
+    </div>
 
+    <div id="bou3">
+      <marquee
+        frameborder="10"
+        behavior="scroll"
+        direction="left"
+        width="100%"
+        scrollamount="2 "
+      >
+        <img
+          [src]="Logo.nuage"
+          id="nuage3"
+          alt="nuage animé"
+          height="50"
+          width="100"
+        />
+      </marquee>
+    </div>
 
-   <div id="logo">
+    <div id="avions">
+      <marquee
+        frameborder="10"
+        behavior="scroll"
+        direction="left"
+        width="100%"
+        scrollamount="15 "
+      >
+        <img
+          [src]="Logo.avion"
+          id="avion"
+          alt="avion animé"
+          height="140"
+          width="180"
+        />
+      </marquee>
+    </div>
 
-      <div id="bou4">
-         <marquee frameborder="10" behavior="scroll" direction="right" width="100%" scrollamount="2 ">
-            <img [src]="Logo.nuageUn" id="nuage4" alt="nuage animé" height="50" width="100" />
-         </marquee>
-      </div>
+    <div id="bou2">
+      <marquee
+        frameborder="10"
+        behavior="scroll"
+        direction="left"
+        width="100%"
+        scrollamount="4 "
+      >
+        <img
+          [src]="Logo.nuageUn"
+          id="nuage2"
+          alt="nuage animé"
+          height="50"
+          width="100"
+        />
+      </marquee>
+    </div>
 
+    <div id="bou">
+      <marquee
+        frameborder="10"
+        behavior="scroll"
+        direction="right"
+        width="100%"
+        scrollamount="3 "
+      >
+        <img
+          [src]="Logo.nuageUn"
+          id="nuage1"
+          alt="nuage animé"
+          height="50"
+          width="100"
+        />
+      </marquee>
+    </div>
+  </div>
 
-      <div id="bou3">
-         <marquee frameborder="10" behavior="scroll" direction="left" width="100%" scrollamount="2 ">
-            <img [src]="Logo.nuage" id="nuage3" alt="nuage animé" height="50" width="100" />
-         </marquee>
+  <div id="btn">
+    <nav>
+      <ul>
+        <li>
+          <a [routerLink]="['/home']">home</a>
+          <span></span><span></span><span></span><span></span>
+        </li>
+        <li>
+          <a [routerLink]="['/continents-list']">continents</a>
+          <span></span><span></span><span></span><span></span>
+        </li>
+        <li>
+          <a [routerLink]="['/travel-list']">travels</a>
+          <span></span><span></span><span></span><span></span>
+        </li>
+        <li>
+          <a [routerLink]="['/contact']">contact</a>
+          <span></span><span></span><span></span><span></span>
+        </li>
+        <li>
+          <a *ngIf="!isConnected" [routerLink]="['/modalconnexion']">SIGN UP</a>
+          <a *ngIf="isConnected" [routerLink]="['/profil']">PROFILE</a>
+          <span></span><span></span><span></span><span></span>
+        </li>
 
-      </div>
-
-
-
-
-
-      <div id="avions">
-         <marquee frameborder="10" behavior="scroll" direction="left" width="100%" scrollamount="15 ">
-            <img [src]="Logo.avion" id="avion" alt="avion animé" height="140" width="180" />
-         </marquee>
-
-      </div>
-
-      <div id="bou2">
-         <marquee frameborder="10" behavior="scroll" direction="left" width="100%" scrollamount="4 ">
-            <img [src]="Logo.nuageUn" id="nuage2" alt="nuage animé" height="50" width="100" />
-         </marquee>
-
-      </div>
-
-      <div id="bou">
-
-
-         <marquee frameborder="10" behavior="scroll" direction="right" width="100%" scrollamount="3 ">
-            <img [src]="Logo.nuageUn" id="nuage1" alt="nuage animé" height="50" width="100" />
-         </marquee>
-      </div>
-   </div>
-
-
-
-
-
-
-
-   <div id="btn">
-      <nav>
-         <ul>
-            <li>
-               <a [routerLink]="['/home']">home</a>
-               <span></span><span></span><span></span><span></span>
-            </li>
-            <li>
-               <a [routerLink]="['/continents-list']">continents</a>
-               <span></span><span></span><span></span><span></span>
-            </li>
-            <li>
-               <a [routerLink]="['/travel-list']">travels</a>
-               <span></span><span></span><span></span><span></span>
-            </li>
-            <li>
-               <a [routerLink]="['/contact']">contact</a>
-               <span></span><span></span><span></span><span></span>
-            </li>
-            <li>
-               <a [routerLink]="['/modalconnexion']">SIGN UP</a>
-               <span></span><span></span><span></span><span></span>
-            </li>
-
-
-
-
-            <div id="search">
-               <label for="site-search"></label>
-               <input type="search" id="site-search" name="q" aria-label="Search through site content">
-               <button id="btnsearch">🔎</button>
-            </div>
-         </ul>
-      </nav>
-   </div>
-
-
-
+        <div id="search">
+          <label for="site-search"></label>
+          <input
+            type="search"
+            id="site-search"
+            name="q"
+            aria-label="Search through site content"
+          />
+          <button id="btnsearch">🔎</button>
+        </div>
+      </ul>
+    </nav>
+  </div>
 </header>

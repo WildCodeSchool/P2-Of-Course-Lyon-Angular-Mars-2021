@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { UtilisateurService } from '../utilisateur.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-
-
   Logo = {
+<<<<<<< HEAD
     nuageUn : "../assets/nuage1.png",
     nuage : "../assets/nuage.png",
     avion : "../assets/avion.png",
@@ -17,10 +17,17 @@ export class NavbarComponent implements OnInit {
 
 
   constructor() { }
+=======
+    nuageUn: '../assets/nuage1.png',
+    nuage: '../assets/nuage.png',
+    avion: '../assets/avion.png',
+  };
+>>>>>>> dev
 
+  constructor(private service: UtilisateurService) {}
 
-  
-  ngOnInit(): void {
-  }
+  // boolean si le user est connecté (depuis le service)
+  isConnected: boolean = this.service.connectUtils.isConnected;
 
+  ngOnInit(): void {}
 }

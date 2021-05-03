@@ -6,28 +6,28 @@ import { UtilisateurService } from '../utilisateur.service';
 @Component({
   selector: 'app-modalconnexion',
   templateUrl: './modalconnexion.component.html',
-  styleUrls: ['./modalconnexion.component.css']
+  styleUrls: ['./modalconnexion.component.css'],
 })
 export class ModalconnexionComponent implements OnInit {
-
-  constructor(private service: UtilisateurService, private router: Router) { }
+  constructor(private service: UtilisateurService, private router: Router) {}
 
   signup = new FormGroup({
     email: new FormControl(),
-    password: new FormControl()
-  })
+    password: new FormControl(),
+  });
 
-  isUserConnected: boolean = this.service.isUserConnected
+  isUserConnected: boolean = this.service.connectUtils.isConnected;
 
-  onSubmit(){
-    this.service.connectUser(this.signup.value['email'], this.signup.value['password'])
-    this.isUserConnected = this.service.isUserConnected
-    if(this.isUserConnected === true){
-      this.router.navigateByUrl("/profil")
+  onSubmit() {
+    this.service.connectUser(
+      this.signup.value['email'],
+      this.signup.value['password']
+    );
+    this.isUserConnected = this.service.connectUtils.isConnected;
+    if (this.isUserConnected === true) {
+      this.router.navigateByUrl('/profil');
     }
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
