@@ -5,6 +5,7 @@ import { TravelListComponent } from './travel-list/travel-list.component';
 import { NavbarComponent, } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
+import { CardsComponent } from './cards/cards.component';
 
 import { ModalconnexionComponent } from './modalconnexion/modalconnexion.component';
 import { NotfoundComponent } from './notfound/notfound.component';
@@ -23,6 +24,7 @@ export const route: Routes = [
 { path: 'modalconnexion', component: ModalconnexionComponent },
 { path: 'detailsVoyages', component: TravelDetailViewComponent },
 { path: 'continents-list', component: ContinentListComponent },
+{ path: 'cards', component: CardsComponent},
 { path: 'profil', component: ProfileComponent },
 {path: '404', component: NotfoundComponent},
 {path: '**', redirectTo: '/404'},
