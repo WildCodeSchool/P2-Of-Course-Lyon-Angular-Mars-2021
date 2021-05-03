@@ -1,9 +1,11 @@
 form {
   width: 100vw;
   text-align: center;
-  background-image: url("/assets/boardwalk-569314-min.jpg");
+  /*background-color: rgb(63, 62, 62);*/
+  background: linear-gradient(#3b3b3b, rgb(93, 92, 92));
   background-size: cover;
 }
+
 input {
   width: 25%;
 }
@@ -11,10 +13,10 @@ textarea {
   width: 25%;
 }
 label {
-  color: rgb(36, 36, 37);
+  color: rgb(194, 194, 197);
 }
 span {
-  color: red;
+  color: rgb(204, 16, 16);
 }
 a {
   color: white;

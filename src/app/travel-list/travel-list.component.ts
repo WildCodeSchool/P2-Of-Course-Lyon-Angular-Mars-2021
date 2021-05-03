@@ -5,12 +5,15 @@ import { Voyage } from '../common/Voyage.model';
 @Component({
   selector: 'app-travel-list',
   templateUrl: './travel-list.component.html',
-  styleUrls: ['./travel-list.component.css']
+  styleUrls: ['./travel-list.component.css'],
 })
 export class TravelListComponent implements OnInit {
+  constructor(private voyageService: ListVoyages) {}
 
-  voyages: Voyage[] = this.voyageService.initVoyage()
+  // réccup liste des voyages depuis le service
+  voyages: Voyage[];
 
+  // variables reactive form
   filtersForm = new FormGroup({
     state: new FormControl(),
     continent: new FormControl(),
@@ -18,43 +21,63 @@ export class TravelListComponent implements OnInit {
     fromLoc: new FormControl(),
     travelDates: new FormGroup({
       start: new FormControl(),
-      end: new FormControl()
+      end: new FormControl(),
     }),
-  })
+  });
 
-  // TODO: VERIFIER LES INPUTS ENTRE EUX (france est uniquement en europe ou avec paris)
-  cityOptions: string[] = this.voyageService.initVoyage().map((x) => x._name)
-  stateOptions: string[] = this.voyageService.initVoyage().map((x) => x._pays)
-  contOptions: string[] = this.voyageService.initVoyage().map((x) => x._continent)
-  
-  onSubmit(){
-    this.voyages = this.voyageService.initVoyage()
-    if(this.filtersForm.get('toLoc').value){
-      this.voyages = this.voyages.filter((x) => x._name.includes(this.filtersForm.get('toLoc').value))
-    }else if(this.filtersForm.get('state').value){
-      this.voyages = this.voyages.filter((x) => x._pays.includes(this.filtersForm.get('state').value))
-    }else if(this.filtersForm.get('continent').value){
-      this.voyages = this.voyages.filter((x) => x._continent.includes(this.filtersForm.get('continent').value))
+  // tableaux afin d'afficher l'auto-complétion des inputs
+  cityOptions: string[];
+  stateOptions: string[];
+  contOptions: string[];
+
+  // fonction qui se lance à la validation du formulaire
+  onSubmit() {
+    // reset la liste des voyages (pour re-effectuer le filter)
+    this.voyages = this.voyageService.initVoyage();
+    // filtrer selon le champ remplit
+    if (this.filtersForm.get('toLoc').value) {
+      this.voyages = this.voyages.filter((voyage) =>
+        voyage._name.includes(this.filtersForm.get('toLoc').value)
+      );
+    } else if (this.filtersForm.get('state').value) {
+      this.voyages = this.voyages.filter((voyage) =>
+        voyage._pays.includes(this.filtersForm.get('state').value)
+      );
+    } else if (this.filtersForm.get('continent').value) {
+      this.voyages = this.voyages.filter((voyage) =>
+        voyage._continent.includes(this.filtersForm.get('continent').value)
+      );
     }
   }
 
-  getChangingOptions(array: string[], value: string): string[]{
-    let newTab: string[] = []
-    array.forEach(element => {
-      if(value){
-        if(!newTab.includes(element) && element.toLowerCase().startsWith(value.toLowerCase(), 0)){
-          newTab.push(element)
-        }else if(!newTab.includes(element) && !value){
-          newTab.push(element)
+  // fonction qui sert à modifier le tableau d'auto-complétion selon la valeur du champ
+  getChangingOptions(array: string[], value: string): string[] {
+    let newTab: string[] = [];
+    array.forEach((element) => {
+      if (value) {
+        if (
+          !newTab.includes(element) &&
+          element.toLowerCase().startsWith(value.toLowerCase(), 0)
+        ) {
+          newTab.push(element);
+        } else if (!newTab.includes(element) && !value) {
+          newTab.push(element);
         }
       }
     });
     return newTab;
   }
 
-  constructor(private voyageService: ListVoyages) {}
-
   ngOnInit(): void {
+    this.voyages = this.voyageService.initVoyage();
+    this.cityOptions = this.voyageService
+      .initVoyage()
+      .map((voyage) => voyage._name);
+    this.stateOptions = this.voyageService
+      .initVoyage()
+      .map((voyage) => voyage._pays);
+    this.contOptions = this.voyageService
+      .initVoyage()
+      .map((voyage) => voyage._continent);
   }
-
 }
