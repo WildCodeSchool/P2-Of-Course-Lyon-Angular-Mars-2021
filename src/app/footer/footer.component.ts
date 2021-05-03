@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UtilisateurService } from '../utilisateur.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public service: UtilisateurService) { }
+userConnected:boolean = this.service.isUserConnected;
   dateCopyright: number= (new Date()).getFullYear()
 
  

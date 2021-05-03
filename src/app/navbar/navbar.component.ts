@@ -8,12 +8,8 @@ import { UtilisateurService } from '../utilisateur.service';
 })
 export class NavbarComponent implements OnInit {
 
-
-
-
-
-  constructor(private service: UtilisateurService) { }
-private userConnected: boolean = this.service.isUserConnected;
+constructor(private service: UtilisateurService) { }
+ userConnected: boolean = this.service.isUserConnected;
 
   
   ngOnInit(): void {

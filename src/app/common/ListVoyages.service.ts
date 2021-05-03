@@ -8,6 +8,8 @@ import { defaultVoyages } from './voyages-mok';
 export class ListVoyages {
   
   constructor() {}
+  public userCart: Voyage[] = [];
+  
   public _listDeVoyages: Voyage[];
 
   public currentDetailsVoyage: Voyage;
@@ -52,5 +54,13 @@ export class ListVoyages {
       }
     });
     return tableauV;
+  }
+
+  public addcard(article:Voyage){
+    this.userCart.push(article)
+  }
+
+  public deleteCard(article:Voyage){
+    this.userCart.splice(this.userCart.indexOf(article),1)
   }
 }
