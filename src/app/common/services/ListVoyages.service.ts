@@ -6,6 +6,7 @@ import { defaultVoyages } from '../voyages-mok';
   providedIn: 'root',
 })
 export class ListVoyages {
+  // lol
   constructor() {}
   public userCart: Voyage[] = [];
 
