@@ -14,9 +14,6 @@ export class NavbarComponent implements OnInit {
     carts : "../assets/cards.png",
   }
 
-
-  
-
   constructor(private service: UtilisateurService) {}
 
   // boolean si le user est connecté (depuis le service)
