@@ -8,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
 
+  Logo = {
+    nuageUn : "../assets/nuage1.png",
+    nuage : "../assets/nuage.png",
+    avion : "../assets/avion.png",
 
+  }
 
 
   constructor() { }
