@@ -26,6 +26,7 @@ import { TravelDetailViewComponent } from './travel-detail-view/travel-detail-vi
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ContinentListComponent } from './continent-list/continent-list.component';
 import { MinistringPipe } from './common/ministring.pipe';
+import { CardsComponent } from './cards/cards.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { MinistringPipe } from './common/ministring.pipe';
     ContactComponent,
     ModalconnexionComponent,
     NotfoundComponent,
-    ContinentListComponent
+    ContinentListComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
