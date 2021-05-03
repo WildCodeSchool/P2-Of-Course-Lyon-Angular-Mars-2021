@@ -79,5 +79,10 @@ export class TravelListComponent implements OnInit {
     this.contOptions = this.voyageService
       .initVoyage()
       .map((voyage) => voyage._continent);
+    // filtrer la liste avec la valeur de la searchbar de la nav (si elle n'est pas vide)
+    if (this.voyageService.searchbarValue !== '') {
+      this.filtersForm.get('toLoc').setValue(this.voyageService.searchbarValue);
+      this.onSubmit();
+    }
   }
 }
