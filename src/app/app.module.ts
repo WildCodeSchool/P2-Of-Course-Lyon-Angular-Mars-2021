@@ -26,12 +26,8 @@ import { TravelDetailViewComponent } from './travel-detail-view/travel-detail-vi
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ContinentListComponent } from './continent-list/continent-list.component';
 import { MinistringPipe } from './common/ministring.pipe';
-<<<<<<< HEAD
 import { CardsComponent } from './cards/cards.component';
-=======
 import { ProfileComponent } from './profile/profile.component';
->>>>>>> dev
-
 
 @NgModule({
   declarations: [
@@ -50,11 +46,8 @@ import { ProfileComponent } from './profile/profile.component';
     ModalconnexionComponent,
     NotfoundComponent,
     ContinentListComponent,
-<<<<<<< HEAD
-    CardsComponent
-=======
+    CardsComponent,
     ProfileComponent
->>>>>>> dev
   ],
   imports: [
     BrowserModule,

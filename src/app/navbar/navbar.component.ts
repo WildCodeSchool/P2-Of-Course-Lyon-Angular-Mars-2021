@@ -8,7 +8,6 @@ import { UtilisateurService } from '../utilisateur.service';
 })
 export class NavbarComponent implements OnInit {
   Logo = {
-<<<<<<< HEAD
     nuageUn : "../assets/nuage1.png",
     nuage : "../assets/nuage.png",
     avion : "../assets/avion.png",
@@ -16,13 +15,7 @@ export class NavbarComponent implements OnInit {
   }
 
 
-  constructor() { }
-=======
-    nuageUn: '../assets/nuage1.png',
-    nuage: '../assets/nuage.png',
-    avion: '../assets/avion.png',
-  };
->>>>>>> dev
+  
 
   constructor(private service: UtilisateurService) {}
 
