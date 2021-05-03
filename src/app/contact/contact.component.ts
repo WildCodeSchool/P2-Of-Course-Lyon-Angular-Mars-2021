@@ -7,16 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
   model: Order = new Order();
-  submitted = false;
+  submitted = false; 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
   onSubmit() {
     // form submitted
     console.log(this.model);
   }
-}
+ }
+  
 export class Order {
   email: string;
   message: string;

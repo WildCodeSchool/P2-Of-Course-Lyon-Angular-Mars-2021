@@ -6,11 +6,10 @@ import { usersList } from './utilisateurs-mok';
   providedIn: 'root'
 })
 export class UtilisateurService {
-  
   public connectedUser: Utilisateur;
   public isUserConnected: boolean = false;
   public users:Utilisateur[] = usersList;
-
+  
   //cette methode valide la connection 
   public connectUser(email:string, password:string){
   // on va chercher si l'email en parametre est le meme qu'un utilisateur de la liste
