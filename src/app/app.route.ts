@@ -24,11 +24,8 @@ export const route: Routes = [
 { path: 'modalconnexion', component: ModalconnexionComponent },
 { path: 'detailsVoyages', component: TravelDetailViewComponent },
 { path: 'continents-list', component: ContinentListComponent },
-<<<<<<< HEAD
 { path: 'cards', component: CardsComponent},
-=======
 { path: 'profil', component: ProfileComponent },
->>>>>>> dev
 {path: '404', component: NotfoundComponent},
 {path: '**', redirectTo: '/404'},
 ];
