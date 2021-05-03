@@ -1,18 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { UtilisateurService } from '../utilisateur.service';
+import { UtilisateurService } from '../common/services/utilisateur.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  constructor(private service: UtilisateurService) {}
+  userConnected: boolean = this.service.connectUtils.isConnected;
 
-constructor(private service: UtilisateurService) { }
- userConnected: boolean = this.service.isUserConnected;
-
-  
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

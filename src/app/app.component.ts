@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Voyage } from './common/Voyage.model';
-import { ListVoyages } from './common/ListVoyages.service';
+import { Voyage } from './common/models/Voyage.model';
+import { ListVoyages } from './common/services/ListVoyages.service';
 
 @Component({
   selector: 'app-root',
