@@ -16,7 +16,7 @@ export class ModalconnexionComponent implements OnInit {
     password: new FormControl(),
   });
 
-  isUserConnected: boolean = this.service.connectUtils.isConnected;
+  isUserConnected: boolean;
 
   onSubmit() {
     this.service.connectUser(
@@ -29,5 +29,7 @@ export class ModalconnexionComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isUserConnected = this.service.connectUtils.isConnected;
+  }
 }
