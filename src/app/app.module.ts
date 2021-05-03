@@ -25,6 +25,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { TravelDetailViewComponent } from './travel-detail-view/travel-detail-view.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ContinentListComponent } from './continent-list/continent-list.component';
+import { MinistringPipe } from './common/ministring.pipe';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ContinentListComponent } from './continent-list/continent-list.componen
     FooterComponent,
     CategoryCardComponent,
     TravelDetailViewComponent,
+    MinistringPipe,
     
     ContactComponent,
     ModalconnexionComponent,
@@ -45,9 +47,7 @@ import { ContinentListComponent } from './continent-list/continent-list.componen
     ContinentListComponent
   ],
   imports: [
-    FormsModule,
     BrowserModule,
-    FormsModule,
     RouterModule.forRoot(route),
     BrowserAnimationsModule,
     MatDatepickerModule,
