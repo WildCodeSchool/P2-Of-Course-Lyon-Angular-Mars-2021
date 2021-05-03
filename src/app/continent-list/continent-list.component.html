@@ -3,9 +3,5 @@
   <hr />
 </div>
 <div class="categoryList" *ngFor="let category of categories">
-  <app-category-card
-    [title]="category.title"
-    [descs]="category.descs"
-    [images]="category.images"
-  ></app-category-card>
+  <app-category-card [card]="category"></app-category-card>
 </div>
