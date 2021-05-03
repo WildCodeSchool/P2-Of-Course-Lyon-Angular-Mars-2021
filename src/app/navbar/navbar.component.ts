@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
     nuageUn : "../assets/nuage1.png",
     nuage : "../assets/nuage.png",
     avion : "../assets/avion.png",
-
+    carts : "../assets/cards.png",
   }
 
 
