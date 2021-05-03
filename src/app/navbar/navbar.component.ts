@@ -10,5 +10,11 @@ export class NavbarComponent implements OnInit {
   constructor(private service: UtilisateurService) {}
   userConnected: boolean = this.service.connectUtils.isConnected;
 
+  Logo = {
+    nuageUn: '../assets/nuage1.png',
+    nuage: '../assets/nuage.png',
+    avion: '../assets/avion.png',
+  };
+
   ngOnInit(): void {}
 }
