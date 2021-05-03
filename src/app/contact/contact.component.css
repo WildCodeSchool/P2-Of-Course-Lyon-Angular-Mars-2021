@@ -1,8 +1,11 @@
 form {
   width: 100vw;
   text-align: center;
-  background: linear-gradient(#043968, #292e33);
+  /*background-color: rgb(63, 62, 62);*/
+  background: linear-gradient(#3b3b3b, rgb(93, 92, 92));
+  background-size: cover;
 }
+
 input {
   width: 25%;
 }
@@ -10,5 +13,11 @@ textarea {
   width: 25%;
 }
 label {
-  color: rgb(189, 189, 192);
+  color: rgb(194, 194, 197);
+}
+span {
+  color: rgb(204, 16, 16);
+}
+a {
+  color: white;
 }

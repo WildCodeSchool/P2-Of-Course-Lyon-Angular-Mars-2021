@@ -10,6 +10,7 @@ import { ModalconnexionComponent } from './modalconnexion/modalconnexion.compone
 import { NotfoundComponent } from './notfound/notfound.component';
 import { TravelDetailViewComponent } from './travel-detail-view/travel-detail-view.component';
 import { ContinentListComponent } from './continent-list/continent-list.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const route: Routes = [
 
@@ -22,6 +23,7 @@ export const route: Routes = [
 { path: 'modalconnexion', component: ModalconnexionComponent },
 { path: 'detailsVoyages', component: TravelDetailViewComponent },
 { path: 'continents-list', component: ContinentListComponent },
+{ path: 'profil', component: ProfileComponent },
 {path: '404', component: NotfoundComponent},
 {path: '**', redirectTo: '/404'},
 ];

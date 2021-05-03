@@ -1,42 +1,69 @@
-<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+<form (ngSubmit)="formulaire.valid && onSubmit() " [formGroup]="formulaire ">
 
+  <!-- Name input -->
   <div class="ms-5 me-5 mb-5 form-group d-flex justify-content-center row ">
-    <label for="nom-input" class="form-label mt-5 ">Nom</label>
-    <input  type="text" class="form-control"  placeholder="NOM" [(ngModel)]="model.nom" name="email" #email="ngModel" email required minlength="8" maxlength="120">
+    <label for="nom-input " class="form-label mt-5 text-uppercase fs-4 ">Lastname</label>
+    <input type="text " class="form-control " formControlName="name" placeholder="NOM " name="nom "
+      [ngClass]="{ 'is-invalid':formulaire.get( 'name').touched && !formulaire.get( 'name').valid} " required />
+    <div class="invalid-feeback " *ngIf="formulaire.get( 'name').touched && formulaire.get( 'name').dirty ">
+      <span *ngIf="formulaire.get( 'name').errors.minlength "> Please enter a name of at least 3 characters</span>
+      <span *ngIf="formulaire.get( 'name').errors.maxlength "> Please enter a name of up to 120 characters></span>
+      <span *ngIf="formulaire.get( 'name').errors.required "> Please enter a name </span>
+    </div>
   </div>
 
-  <div class="m-5  form-group d-flex justify-content-center row ">
-    <label for="prenom-input" class="form-label">Prénom</label>
-    <input  type="text" class="form-control"  placeholder="Prénom" [(ngModel)]="model.prenom" name="email" #email="ngModel" email required minlength="8" maxlength="120">
+  <!-- First name input -->
+  <div class="m-5 form-group d-flex justify-content-center row ">
+    <label for="prenom-input " class="form-label text-uppercase fs-4">Firstname</label>
+    <input type="text " class="form-control " formControlName="prenom" placeholder="Prénom " name="prenom "
+      [ngClass]="{ 'is-invalid':formulaire.get( 'prenom').touched && !formulaire.get( 'prenom').valid} " />
+    <div class="invalid-feeback " *ngIf="formulaire.get( 'prenom').touched && formulaire.get( 'prenom').dirty ">
+      <span *ngIf="formulaire.get( 'prenom').errors.required ">Please enter a firstname</span>
+      <span *ngIf="formulaire.get( 'prenom').errors.minlength ">The minimum length of your first name must be
+        greater than 3</span>
+      <span *ngIf="formulaire.get( 'prenom').errors.maxlength ">The maximum length of your first name must be
+        lower
+        at
+        120</span>
+    </div>
   </div>
 
-<div class="m-5  form-group d-flex justify-content-center row ">
-    <label for="email-input" class="form-label">Email address</label>
-    <input  type="email" class="form-control"  placeholder="name@example.com" [(ngModel)]="model.email" name="email" #email="ngModel" email required minlength="8" maxlength="120">
+  <!-- Email input -->
+  <div class="m-5 form-group d-flex justify-content-center row ">
+    <label for="email-input " class="form-label text-uppercase fs-4">Email address</label>
+    <input type="email " class="form-control " formControlName="email" placeholder="name@example.com " name="email "
+      [ngClass]="{ 'is-invalid':formulaire.get('email').touched && !formulaire.get( 'email').valid} " />
+    <div class="invalid-feeback " *ngIf="formulaire.get( 'email').touched && formulaire.get( 'email').dirty ">
+      <span *ngIf="formulaire.get('email').errors.required ">
+        Email address is required</span>
+      <span *ngIf="formulaire.get('email').errors.minlength ">The minimum length must be greater than 13</span>
+      <span *ngIf="formulaire.get('email').errors.maxlength ">The maximum length must be less than 120</span>
+      <span *ngIf="formulaire.get('email').errors.email ">
+        You are not using the right design of an email</span>
+    </div>
   </div>
-  <!--message d'erreur -->
-<div *ngIf="email.errors && myForm.submitted">
-    <span *ngIf="email.errors.required">L'adresse mail est requise</span>
-    <span *ngIf="email.errors.minlength"
-      >La longueur minimale doit être supérieure à 8</span
-    >
-    <span *ngIf="email.errors.maxlength"
-      >La longueur maximale doit être inférieure à 120</span
-    >
-    <span *ngIf="email.errors.email"
-      >Tu n'utilise pas la b￼
-      onne conception d'un mail</span
-    >
-</div>
 
 
+  <!-- Message input -->
+  <div class="m-5 d-flex justify-content-center row">
+    <label for="exampleFormControlTextarea1 " class="form-label text-uppercase fs-4">Your message</label>
+    <textarea class="form-control " (change)="onMessageChange()" id="exampleFormControlTextarea1 " rows="3 "
+      formControlName="message" name="text "
+      [ngClass]="{ 'is-invalid':formulaire.get( 'message').touched && !formulaire.get( 'message').valid} "></textarea>
+    <div class="invalid-feeback " *ngIf="formulaire.get( 'message').touched && formulaire.get( 'message').dirty">
+      <span *ngIf="formulaire.get('message').errors.required ">A message is required</span>
+      <span *ngIf="formulaire.get('message').errors.minlength ">The minimum message length must be greater than
+        5</span>
+      <span *ngIf="formulaire.get('message').errors.maxlength ">The maximum length must be less than 360</span>
 
-  <div class="m-5 form-group d-flex justify-content-center row">
-    <label for="text-input" class="form-label">Enter your message</label>
-    <textarea class="form-control" [(ngModel)]="model.message" rows="3" #message="ngModel" name="message" required minlength="3" maxlength="300"></textarea>
+    </div>
   </div>
+
+
   <div>
-    
-    <button class="m-5" type="submit">Send message</button>
+    <button class="btn btn-secondary   m-5" type="submit" [disabled]="!formulaire.valid"> <a
+        class="text-decoration-none " [href]="mailto">Send
+        message</a> </button>
   </div>
+
 </form>
