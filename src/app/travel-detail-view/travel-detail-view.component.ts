@@ -14,6 +14,7 @@ export class TravelDetailViewComponent implements OnInit {
   travel : Voyage = this.service.currentDetailsVoyage;
 
   ngOnInit(): void {
+    this.travel = this.service.currentDetailsVoyage
   }
 
 }
