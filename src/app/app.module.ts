@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CardTravelComponent } from './card-travel/card-travel.component';
-import { ActivityComponent } from './activity/activity.component';
 
 import { HomeComponent } from './home/home.component';
 import { TravelListComponent } from './travel-list/travel-list.component';
@@ -33,7 +32,6 @@ import { ProfileComponent } from './profile/profile.component';
   declarations: [
     AppComponent,
     CardTravelComponent,
-    ActivityComponent,
     HomeComponent,
     TravelListComponent,
     NavbarComponent,
