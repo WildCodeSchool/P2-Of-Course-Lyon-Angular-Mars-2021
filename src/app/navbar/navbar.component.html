@@ -56,15 +56,18 @@
                <span></span><span></span><span></span><span></span>
             </li>
 
+            
+
             <div id="search">
                <label for="site-search"></label>
                <input type="search" id="site-search" name="q" aria-label="Search through site content" />
                <button id="btnsearch">🔎</button>
+
             </div>
 
-            <li>
-               <a [routerLink]="['/cards']"><img [src]="Logo.carts"></a>
-               <span></span><span></span><span></span><span></span>
+            <li id="carts">
+               <a [routerLink]="['/cards']"><img [src]="Logo.carts" >panier</a>
+               
             </li>
 
          </ul>
