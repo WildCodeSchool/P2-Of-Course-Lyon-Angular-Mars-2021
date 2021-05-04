@@ -10,13 +10,15 @@ import { Router } from '@angular/router';
 })
 export class ContactComponent implements OnInit {
 
-
- 
-  public mailto:string=""
-  constructor(private fb: FormBuilder) {}
   public formulaire: FormGroup;
-  public bodyOfMessage: string = "";
+  public bodyOfMessage: string ;
+  public mailto:string;
+  
+  constructor(private fb: FormBuilder) {}
+  
+ 
   ngOnInit(): void {
+    
 
     this.formulaire = this.fb.group({
      name:['',[Validators.required, Validators.minLength(3), Validators.maxLength(120)]],
@@ -27,14 +29,7 @@ export class ContactComponent implements OnInit {
     });
     }
 
-  onSubmit() {
-    // Get form value as JSON object
-    
-    console.log(this.bodyOfMessage)
-    console.log(this.formulaire)
-    console.log(this.mailto)
-    console.log(this.bodyOfMessage)
-  }
+  
   onMessageChange(){
     this.bodyOfMessage = this.formulaire.get('message').value
     this.mailto="mailto:contact@ofcourse.fr?subject=demande d'information&cc=contact@ofcourse.fr&bcc=contact@ofcourse.fr&body=" + this.bodyOfMessage;

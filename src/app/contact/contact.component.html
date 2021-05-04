@@ -1,4 +1,4 @@
-<form (ngSubmit)="formulaire.valid && onSubmit() " [formGroup]="formulaire ">
+<form (ngSubmit)="formulaire.valid  " [formGroup]="formulaire ">
 
   <!-- Name input -->
   <div class="ms-5 me-5 mb-5 form-group d-flex justify-content-center row ">
@@ -6,9 +6,9 @@
     <input type="text " class="form-control " formControlName="name" placeholder="NOM " name="nom "
       [ngClass]="{ 'is-invalid':formulaire.get( 'name').touched && !formulaire.get( 'name').valid} " required />
     <div class="invalid-feeback " *ngIf="formulaire.get( 'name').touched && formulaire.get( 'name').dirty ">
-      <span *ngIf="formulaire.get( 'name').errors.minlength "> Please enter a name of at least 3 characters</span>
-      <span *ngIf="formulaire.get( 'name').errors.maxlength "> Please enter a name of up to 120 characters></span>
-      <span *ngIf="formulaire.get( 'name').errors.required "> Please enter a name </span>
+      <span *ngIf="formulaire.get( 'name').errors?.minlength "> Please enter a name of at least 3 characters</span>
+      <span *ngIf="formulaire.get( 'name').errors?.maxlength "> Please enter a name of up to 120 characters></span>
+      <span *ngIf="formulaire.get( 'name').errors?.required "> Please enter a name </span>
     </div>
   </div>
 
@@ -18,10 +18,10 @@
     <input type="text " class="form-control " formControlName="prenom" placeholder="Prénom " name="prenom "
       [ngClass]="{ 'is-invalid':formulaire.get( 'prenom').touched && !formulaire.get( 'prenom').valid} " />
     <div class="invalid-feeback " *ngIf="formulaire.get( 'prenom').touched && formulaire.get( 'prenom').dirty ">
-      <span *ngIf="formulaire.get( 'prenom').errors.required ">Please enter a firstname</span>
-      <span *ngIf="formulaire.get( 'prenom').errors.minlength ">The minimum length of your first name must be
+      <span *ngIf="formulaire.get( 'prenom').errors?.required ">Please enter a firstname</span>
+      <span *ngIf="formulaire.get( 'prenom').errors?.minlength ">The minimum length of your first name must be
         greater than 3</span>
-      <span *ngIf="formulaire.get( 'prenom').errors.maxlength ">The maximum length of your first name must be
+      <span *ngIf="formulaire.get( 'prenom').errors?.maxlength ">The maximum length of your first name must be
         lower
         at
         120</span>
@@ -34,11 +34,11 @@
     <input type="email " class="form-control " formControlName="email" placeholder="name@example.com " name="email "
       [ngClass]="{ 'is-invalid':formulaire.get('email').touched && !formulaire.get( 'email').valid} " />
     <div class="invalid-feeback " *ngIf="formulaire.get( 'email').touched && formulaire.get( 'email').dirty ">
-      <span *ngIf="formulaire.get('email').errors.required ">
+      <span *ngIf="formulaire.get('email').errors?.required ">
         Email address is required</span>
-      <span *ngIf="formulaire.get('email').errors.minlength ">The minimum length must be greater than 13</span>
-      <span *ngIf="formulaire.get('email').errors.maxlength ">The maximum length must be less than 120</span>
-      <span *ngIf="formulaire.get('email').errors.email ">
+      <span *ngIf="formulaire.get('email').errors?.minlength ">The minimum length must be greater than 13</span>
+      <span *ngIf="formulaire.get('email').errors?.maxlength ">The maximum length must be less than 120</span>
+      <span *ngIf="formulaire.get('email').errors?.email ">
         You are not using the right design of an email</span>
     </div>
   </div>
@@ -51,10 +51,10 @@
       formControlName="message" name="text "
       [ngClass]="{ 'is-invalid':formulaire.get( 'message').touched && !formulaire.get( 'message').valid} "></textarea>
     <div class="invalid-feeback " *ngIf="formulaire.get( 'message').touched && formulaire.get( 'message').dirty">
-      <span *ngIf="formulaire.get('message').errors.required ">A message is required</span>
-      <span *ngIf="formulaire.get('message').errors.minlength ">The minimum message length must be greater than
+      <span *ngIf="formulaire.get('message').errors?.required ">A message is required</span>
+      <span *ngIf="formulaire.get('message').errors?.minlength ">The minimum message length must be greater than
         5</span>
-      <span *ngIf="formulaire.get('message').errors.maxlength ">The maximum length must be less than 360</span>
+      <span *ngIf="formulaire.get('message').errors?.maxlength ">The maximum length must be less than 360</span>
 
     </div>
   </div>
