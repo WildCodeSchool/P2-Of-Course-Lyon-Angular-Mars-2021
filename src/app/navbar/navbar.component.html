@@ -123,9 +123,15 @@
             id="site-search"
             name="q"
             aria-label="Search through site content"
+            [(ngModel)]="search"
           />
-          <button id="btnsearch">🔎</button>
+          <button (click)="onSearch()" id="btnsearch">🔎</button>
         </div>
+
+        <li>
+          <a [routerLink]="['/cards']"><img [src]="Logo.carts" /></a>
+          <span></span><span></span><span></span><span></span>
+        </li>
       </ul>
     </nav>
   </div>

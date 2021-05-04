@@ -1,19 +1,13 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="filtersForm">
-  <h3>Travel</h3>
+  <h3>Search a destination:</h3>
 
   <!-- DESTINATIONS INPUTS -->
   <div class="input-group w-50">
-    <span class="input-group-text">Go from ... to ...</span>
+    <span class="input-group-text">City</span>
     <input
       type="text"
       class="form-control"
-      placeholder="From..."
-      formControlName="fromLoc"
-    />
-    <input
-      type="text"
-      class="form-control"
-      placeholder="To..."
+      placeholder="City..."
       formControlName="toLoc"
       [matAutocomplete]="cityAuto"
       (input)="onSubmit()"
@@ -96,24 +90,6 @@
         </mat-option>
       </span>
     </mat-autocomplete>
-  </div>
-
-  <!-- DATES INPUTS -->
-  <div class="input-group w-50">
-    <span class="input-group-text">Travel Dates</span>
-    <mat-date-range-input
-      class="form-control"
-      [rangePicker]="travelDates"
-      formGroupName="travelDates"
-    >
-      <input matStartDate placeholder="Start date" formControlName="start" />
-      <input matEndDate placeholder="End date" formControlName="end" />
-    </mat-date-range-input>
-    <mat-datepicker-toggle
-      [for]="travelDates"
-      matSuffix
-    ></mat-datepicker-toggle>
-    <mat-date-range-picker #travelDates></mat-date-range-picker>
   </div>
 
   <button type="submit" class="btn btn-primary w-50">Search</button>
