@@ -83,6 +83,11 @@ export class TravelListComponent implements OnInit {
     if (this.voyageService.searchbarValue !== '') {
       this.filtersForm.get('toLoc').setValue(this.voyageService.searchbarValue);
       this.onSubmit();
+    } else if (this.voyageService.continentClickValue !== '') {
+      this.filtersForm
+        .get('continent')
+        .setValue(this.voyageService.continentClickValue);
+      this.onSubmit();
     }
   }
 }
