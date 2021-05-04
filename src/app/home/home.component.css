@@ -8,20 +8,30 @@
 .headerTextHome img {
   width: 5em;
 }
-.categoryList {
-  margin-bottom: 4rem;
-}
-.headerCategoriesHome {
+.about {
   display: flex;
-  flex-direction: column;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  margin-top: 4rem;
-  width: 100%;
+  flex-direction: column;
+  margin-top: 8rem;
+  margin-bottom: 4rem;
 }
-.headerCategoriesHome hr {
-  border: 1px solid #444444;
+.about img {
+  border-radius: 100%;
+  width: 100px;
+}
+.team {
+  display: flex;
   width: 100%;
-  margin: 0;
-  opacity: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.person {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem;
 }

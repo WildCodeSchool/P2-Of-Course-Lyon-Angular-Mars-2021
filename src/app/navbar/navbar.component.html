@@ -9,9 +9,9 @@
         scrollamount="2 "
       >
         <img
-          src="../assets/nuage1.png"
+          [src]="Logo.nuageUn"
           id="nuage4"
-          alt="nuage of crouse"
+          alt="nuage animé"
           height="50"
           width="100"
         />
@@ -27,9 +27,9 @@
         scrollamount="2 "
       >
         <img
-          src="../assets/nuage.png"
+          [src]="Logo.nuage"
           id="nuage3"
-          alt="nuage of crouse"
+          alt="nuage animé"
           height="50"
           width="100"
         />
@@ -45,9 +45,9 @@
         scrollamount="15 "
       >
         <img
-          src="../assets/avion.png"
+          [src]="Logo.avion"
           id="avion"
-          alt="nuage of crouse"
+          alt="avion animé"
           height="140"
           width="180"
         />
@@ -63,9 +63,9 @@
         scrollamount="4 "
       >
         <img
-          src="../assets/nuage1.png"
+          [src]="Logo.nuageUn"
           id="nuage2"
-          alt="nuage of crouse"
+          alt="nuage animé"
           height="50"
           width="100"
         />
@@ -81,9 +81,9 @@
         scrollamount="3 "
       >
         <img
-          src="../assets/nuage1.png"
+          [src]="Logo.nuageUn"
           id="nuage1"
-          alt="nuage of crouse"
+          alt="nuage animé"
           height="50"
           width="100"
         />
@@ -99,7 +99,11 @@
           <span></span><span></span><span></span><span></span>
         </li>
         <li>
-          <a [routerLink]="['/travel-list']">travel-list</a>
+          <a [routerLink]="['/continents-list']">continents</a>
+          <span></span><span></span><span></span><span></span>
+        </li>
+        <li>
+          <a [routerLink]="['/travel-list']">travels</a>
           <span></span><span></span><span></span><span></span>
         </li>
         <li>
@@ -107,8 +111,11 @@
           <span></span><span></span><span></span><span></span>
         </li>
         <li>
-          <a [routerLink]="['/modalconnexion']">SIGN UP</a>
+          <a *ngIf="!isConnected" [routerLink]="['/modalconnexion']">SIGN UP</a>
+          <a *ngIf="isConnected" [routerLink]="['/profil']">PROFILE</a>
+          <span></span><span></span><span></span><span></span>
         </li>
+
         <div id="search">
           <label for="site-search"></label>
           <input
@@ -116,9 +123,15 @@
             id="site-search"
             name="q"
             aria-label="Search through site content"
+            [(ngModel)]="search"
           />
-          <button>✈️</button>
+          <button (click)="onSearch()" id="btnsearch">🔎</button>
         </div>
+
+        <li>
+          <a [routerLink]="['/cards']"><img [src]="Logo.carts" /></a>
+          <span></span><span></span><span></span><span></span>
+        </li>
       </ul>
     </nav>
   </div>

@@ -1,0 +1,17 @@
+.categoryList {
+  margin-bottom: 4rem;
+}
+.headerCategoriesHome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  width: 100%;
+}
+.headerCategoriesHome hr {
+  border: 1px solid #444444;
+  width: 100%;
+  margin: 0;
+  opacity: 100%;
+}

@@ -1,36 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { ReseauxList } from '../common/res-sociaux-service';
+import { SocialMedia } from '../models/social.model';
+import { UtilisateurService } from '../utilisateur.service';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+  styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  resSociaux:SocialMedia[]=[]
 
-  dateCopyright: number= (new Date()).getFullYear()
+  dateCopyright: number;
+
+  constructor(private service : ReseauxList, private userService: UtilisateurService) { }
+
+  
+ // boolean si le user est connecté (depuis le service)
+ isConnected: boolean = this.userService.connectUtils.isConnected;
+ 
+ ngOnInit() {
+  this.dateCopyright = new Date().getFullYear()
+  this.resSociaux=this.service.initReseaux()
 
  
-ngOnInit() {
-  
-  
+ }
+ 
 }
- openLink(url:string){
-  window.open(url)
-}
-
-toggoleShowHide = true;
-toggole = true;
-
-
-itemClicked(){
-  this.toggoleShowHide = !this.toggoleShowHide;
-  
-}
-phoneClicked(){
-  this.toggole = !this.toggole;
-  
-}
-
-}
+ 

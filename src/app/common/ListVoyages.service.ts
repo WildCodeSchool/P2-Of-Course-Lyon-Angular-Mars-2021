@@ -3,27 +3,32 @@ import { Voyage } from './Voyage.model';
 import { defaultVoyages } from './voyages-mok';
 
 @Injectable({
-  providedIn:'root'
+  providedIn: 'root',
 })
 export class ListVoyages {
-  
   constructor() {}
+
+  // variable searchbar
+  public searchbarValue: string = '';
+
+  public userCart: Voyage[] = [];
+
   public _listDeVoyages: Voyage[];
 
   public currentDetailsVoyage: Voyage;
 
-  public setCurrentDetailsVoyage(voyage: Voyage){
-    this.currentDetailsVoyage = voyage
+  public setCurrentDetailsVoyage(voyage: Voyage) {
+    this.currentDetailsVoyage = voyage;
   }
 
   public initVoyage() {
-    this._listDeVoyages = defaultVoyages
+    this._listDeVoyages = defaultVoyages;
     return this._listDeVoyages;
   }
 
-  public getContinent(continent :string) {
+  public getContinent(continent: string) {
     const tableauAm: Voyage[] = [];
-    const continentLowC = continent.toLocaleLowerCase()
+    const continentLowC = continent.toLocaleLowerCase();
     this._listDeVoyages.forEach((element) => {
       if (element._continent === continentLowC) {
         tableauAm.push(element);
@@ -32,8 +37,7 @@ export class ListVoyages {
     return tableauAm;
   }
 
-  
-  public getPays(pays:string) {
+  public getPays(pays: string) {
     const tableauP: Voyage[] = [];
     const paysLowC = pays.toLocaleLowerCase();
     this._listDeVoyages.forEach((element) => {
@@ -43,7 +47,7 @@ export class ListVoyages {
     });
     return tableauP;
   }
-  public getVille(ville:string) {
+  public getVille(ville: string) {
     const tableauV: Voyage[] = [];
     const villeLowC = ville.toLocaleLowerCase();
     this._listDeVoyages.forEach((element) => {
@@ -52,5 +56,13 @@ export class ListVoyages {
       }
     });
     return tableauV;
+  }
+
+  public addcard(article: Voyage) {
+    this.userCart.push(article);
+  }
+
+  public deleteCard(article: Voyage) {
+    this.userCart.splice(this.userCart.indexOf(article), 1);
   }
 }
