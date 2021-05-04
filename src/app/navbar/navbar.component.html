@@ -111,8 +111,14 @@
           <span></span><span></span><span></span><span></span>
         </li>
         <li>
-          <a *ngIf="!isConnected" [routerLink]="['/modalconnexion']">SIGN UP</a>
-          <a *ngIf="isConnected" [routerLink]="['/profil']">PROFILE</a>
+          <a
+            *ngIf="!connectUtils.isConnected"
+            [routerLink]="['/modalconnexion']"
+            >SIGN UP</a
+          >
+          <a *ngIf="connectUtils.isConnected" [routerLink]="['/profil']"
+            >PROFILE</a
+          >
           <span></span><span></span><span></span><span></span>
         </li>
 

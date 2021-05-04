@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ConnectUtils } from '../common/connectUtils';
 import { ListVoyages } from '../common/ListVoyages.service';
 import { UtilisateurService } from '../utilisateur.service';
 
@@ -25,7 +26,7 @@ export class NavbarComponent implements OnInit {
   search: string = '';
 
   // boolean si le user est connecté (depuis le service)
-  isConnected: boolean = this.service.connectUtils.isConnected;
+  connectUtils: ConnectUtils;
 
   onSearch() {
     // on définit la valeur de la recherche dans le service
@@ -34,5 +35,7 @@ export class NavbarComponent implements OnInit {
     this.route.navigate(['/travel-list']);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.connectUtils = this.service.connectUtils;
+  }
 }
