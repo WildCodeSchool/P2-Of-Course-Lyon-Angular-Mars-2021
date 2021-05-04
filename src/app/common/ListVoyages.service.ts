@@ -10,6 +10,8 @@ export class ListVoyages {
 
   // variable searchbar
   public searchbarValue: string = '';
+  // variable continent card
+  public continentClickValue: string = '';
 
   public userCart: Voyage[] = [];
 

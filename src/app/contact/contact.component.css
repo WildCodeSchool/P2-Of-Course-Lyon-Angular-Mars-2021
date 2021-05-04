@@ -1,17 +1,15 @@
-form {
-  width: 100vw;
-  text-align: center;
-  /*background-color: rgb(63, 62, 62);*/
-  background: linear-gradient(#3b3b3b, rgb(93, 92, 92));
+#bckground {
+  background-image: url("../../assets/boardwalk-569314-min.jpg");
   background-size: cover;
 }
+form {
+  width: 40vw;
+  text-align: center;
+  /*background-color: rgb(63, 62, 62);*/
+  /*background: linear-gradient(#3b3b3b, rgb(93, 92, 92));*/
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-input {
-  width: 25%;
-}
-textarea {
-  width: 25%;
-}
 label {
   color: rgb(194, 194, 197);
 }
