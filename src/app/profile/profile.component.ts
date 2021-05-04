@@ -8,10 +8,17 @@ import { Utilisateur } from '../utilisateur.model';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
+
+
+adress:string = "Bay Area, San Francisco, CA"
+
   constructor(public service: UtilisateurService) {}
 
-  // réccupérer le user connecté depuis le service
-  public infoUser: Utilisateur = this.service.connectUtils.connectedUser;
 
-  ngOnInit(): void {}
+  // réccupérer le user connecté depuis le service
+  public infoUser: Utilisateur;
+
+  ngOnInit(): void {
+   this.infoUser = this.service.connectUtils.connectedUser;
+  }
 }
