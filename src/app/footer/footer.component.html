@@ -1,79 +1,99 @@
-<footer class=" bg-dark">
-    <!-- section logo fb twitter insta -->
-    <div class="bg-grey">
-        <div class="container">
-            <div class="row py-3 d-flex space-beetwin">
-                <div *ngFor="let reseau of resSociaux" class="col d-flex justify-content-around  text-center">
-                    <a [href]="reseau.link" target="_blank"><span [class]="reseau.icon"> </span>
-                    </a>
-
-                </div>
-            </div>
+<footer class="bg-dark">
+  <!-- section logo fb twitter insta -->
+  <div class="bg-grey">
+    <div class="container">
+      <div class="row py-3 d-flex space-beetwin">
+        <div
+          *ngFor="let reseau of resSociaux"
+          class="col d-flex justify-content-around text-center"
+        >
+          <a [href]="reseau.link" target="_blank"
+            ><span [class]="reseau.icon"> </span>
+          </a>
         </div>
+      </div>
     </div>
-    <div class="container text-center mt-5">
-        <div class="d-flex justify-content-between flex-wrap m-5">
-            <!-- section routes -->
-            <div>
-                <h6 class="text-uppercase font-weight-bold text-white fs-6">
-                    Link useful
-                </h6>
-                <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 125px; height: 2px" />
-                <div class="d-flex justify-content-center">
-                    <li class="d-flex flex-column text-start">
-                        <a id="router" [routerLink]="['/home']"> Home </a>
-                        <hr />
-                        <a id="router" [routerLink]="['/continents-list']"> Continents </a>
-                        <hr />
-                        <a id="router" [routerLink]="['/travel-list']"> Travels </a>
-                        <hr />
-                        <a id="router" [routerLink]="['/contact']"> Contact </a>
-                        <hr />
-                        <a id="router" *ngIf="!isConnected" [routerLink]="['/modalconnexion']">
-                            Sign up
-                        </a>
-                        <a id="router" *ngIf="isConnected" [routerLink]="['/modalconnexion']">
-                            Profile
-                        </a>
-                    </li>
-                </div>
-            </div>
-
-            <!-- section logo footer -->
-            <div>
-                <img src="/assets/logo_small.png" class="w-50 m-5" />
-            </div>
-
-            <!-- section contact -->
-            <div>
-                <h6 class="text-uppercase font-weight-bold text-white fs-6">
-                    Contact us
-                </h6>
-                <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 125px; height: 2px" />
-
-                <div class="d-flex justify-content-center">
-                    <ul class="list-unstyled text-start">
-                        <li class="my-2 text-white">
-                            <a class="fas fa-home mr-3 text-decoration-none text-white me-2"></a>
-                            30 avenue Victor hugo
-                        </li>
-                        <hr />
-                        <li class="my-2 text-white">
-                            <a class="fas fa-envelope text-decoration-none h-25 text-white me-2"></a>
-                            ofcourse@gmail.com
-                        </li>
-                        <hr />
-                        <li class="my-2 text-white">
-                            <a class="fas fa-mobile-alt text-white me-2"></a>
-                            04.12.22.33.45
-                        </li>
-                    </ul>
-                </div>
-            </div>
+  </div>
+  <div class="container text-center mt-5">
+    <div class="d-flex justify-content-between flex-wrap m-5">
+      <!-- section routes -->
+      <div>
+        <h6 class="text-uppercase font-weight-bold text-white fs-6">
+          Link useful
+        </h6>
+        <hr
+          class="bg-success mb-4 mt-0 d-inline-block mx-auto"
+          style="width: 125px; height: 2px"
+        />
+        <div class="d-flex justify-content-center">
+          <li class="d-flex flex-column text-start">
+            <a id="router" [routerLink]="['/home']"> Home </a>
+            <hr />
+            <a id="router" [routerLink]="['/continents-list']"> Continents </a>
+            <hr />
+            <a id="router" [routerLink]="['/travel-list']"> Travels </a>
+            <hr />
+            <a id="router" [routerLink]="['/contact']"> Contact </a>
+            <hr />
+            <a
+              id="router"
+              *ngIf="!connectUtils.isConnected"
+              [routerLink]="['/modalconnexion']"
+            >
+              Sign up
+            </a>
+            <a
+              id="router"
+              *ngIf="connectUtils.isConnected"
+              [routerLink]="['/modalconnexion']"
+            >
+              Profile
+            </a>
+          </li>
         </div>
-        <p>
-            <i>&copy;Copyright {{ dateCopyright }} - by OfCourse</i>
-        </p>
+      </div>
+
+      <!-- section logo footer -->
+      <div>
+        <img src="/assets/logo_small.png" class="w-50 m-5" />
+      </div>
+
+      <!-- section contact -->
+      <div>
+        <h6 class="text-uppercase font-weight-bold text-white fs-6">
+          Contact us
+        </h6>
+        <hr
+          class="bg-success mb-4 mt-0 d-inline-block mx-auto"
+          style="width: 125px; height: 2px"
+        />
+
+        <div class="d-flex justify-content-center">
+          <ul class="list-unstyled text-start">
+            <li class="my-2 text-white">
+              <a
+                class="fas fa-home mr-3 text-decoration-none text-white me-2"
+              ></a>
+              30 avenue Victor hugo
+            </li>
+            <hr />
+            <li class="my-2 text-white">
+              <a
+                class="fas fa-envelope text-decoration-none h-25 text-white me-2"
+              ></a>
+              ofcourse@gmail.com
+            </li>
+            <hr />
+            <li class="my-2 text-white">
+              <a class="fas fa-mobile-alt text-white me-2"></a>
+              04.12.22.33.45
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-   
+    <p>
+      <i>&copy;Copyright {{ dateCopyright }} - by OfCourse</i>
+    </p>
+  </div>
 </footer>

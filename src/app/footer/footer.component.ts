@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConnectUtils } from '../common/connectUtils';
 import { ReseauxList } from '../common/res-sociaux-service';
 import { SocialMedia } from '../models/social.model';
 import { UtilisateurService } from '../utilisateur.service';
@@ -9,23 +10,21 @@ import { UtilisateurService } from '../utilisateur.service';
   styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent implements OnInit {
-
-  resSociaux:SocialMedia[]=[]
+  resSociaux: SocialMedia[] = [];
 
   dateCopyright: number;
 
-  constructor(private service : ReseauxList, private userService: UtilisateurService) { }
+  constructor(
+    private service: ReseauxList,
+    private userService: UtilisateurService
+  ) {}
 
-  
- // boolean si le user est connecté (depuis le service)
- isConnected: boolean = this.userService.connectUtils.isConnected;
- 
- ngOnInit() {
-  this.dateCopyright = new Date().getFullYear()
-  this.resSociaux=this.service.initReseaux()
+  // boolean si le user est connecté (depuis le service)
+  connectUtils: ConnectUtils;
 
- 
- }
- 
+  ngOnInit() {
+    this.dateCopyright = new Date().getFullYear();
+    this.resSociaux = this.service.initReseaux();
+    this.connectUtils = this.userService.connectUtils;
+  }
 }
- 
