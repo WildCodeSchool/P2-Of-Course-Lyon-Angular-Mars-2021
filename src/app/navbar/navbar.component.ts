@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ConnectUtils } from '../common/connectUtils';
+import { ListVoyages } from '../common/ListVoyages.service';
 import { UtilisateurService } from '../utilisateur.service';
 
 @Component({
@@ -7,17 +10,32 @@ import { UtilisateurService } from '../utilisateur.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  Logo = {
-    nuageUn : "../assets/nuage1.png",
-    nuage : "../assets/nuage.png",
-    avion : "../assets/avion.png",
-    carts : "../assets/cards.png",
-  }
+  constructor(
+    private service: UtilisateurService,
+    private travelService: ListVoyages,
+    private route: Router
+  ) {}
 
-  constructor(private service: UtilisateurService) {}
+  Logo = {
+    nuageUn: '../assets/nuage1.png',
+    nuage: '../assets/nuage.png',
+    avion: '../assets/avion.png',
+    carts: '../assets/cards.png',
+  };
+
+  search: string = '';
 
   // boolean si le user est connecté (depuis le service)
-  isConnected: boolean = this.service.connectUtils.isConnected;
+  connectUtils: ConnectUtils;
 
-  ngOnInit(): void {}
+  onSearch() {
+    // on définit la valeur de la recherche dans le service
+    this.travelService.searchbarValue = this.search;
+    // on redirige l'utilisateur vers la route /list
+    this.route.navigate(['/travel-list']);
+  }
+
+  ngOnInit(): void {
+    this.connectUtils = this.service.connectUtils;
+  }
 }

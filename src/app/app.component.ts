@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Voyage } from './common/Voyage.model';
-import { ListVoyages } from './common/ListVoyages.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +6,7 @@ import { ListVoyages } from './common/ListVoyages.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private service: ListVoyages) {}
+  constructor() {}
   title = 'ofcourse';
 
   ngOnInit() {}
