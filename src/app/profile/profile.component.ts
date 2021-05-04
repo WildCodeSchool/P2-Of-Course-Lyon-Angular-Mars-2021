@@ -10,10 +10,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-  constructor(public service: UtilisateurService, private router: Router) {}
+
+
+adress:string = "Bay Area, San Francisco, CA"
+
+  constructor(public service: UtilisateurService) {}
+
 
   // réccupérer le user connecté depuis le service
-  public infoUser: Utilisateur = this.service.connectUtils.connectedUser;
+  public infoUser: Utilisateur;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+   this.infoUser = this.service.connectUtils.connectedUser;
+  }
 }
