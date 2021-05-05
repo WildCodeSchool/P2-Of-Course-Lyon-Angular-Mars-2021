@@ -28,13 +28,9 @@
         <div class="d-flex justify-content-center">
           <li class="d-flex flex-column text-start">
             <a id="router" [routerLink]="['/home']"> Home </a>
-            <hr />
             <a id="router" [routerLink]="['/continents-list']"> Continents </a>
-            <hr />
             <a id="router" [routerLink]="['/travel-list']"> Travels </a>
-            <hr />
             <a id="router" [routerLink]="['/contact']"> Contact </a>
-            <hr />
             <a
               id="router"
               *ngIf="!connectUtils.isConnected"
@@ -53,18 +49,13 @@
         </div>
       </div>
 
-      <!-- section logo footer -->
-      <div>
-        <img src="/assets/logo_small.png" class="w-50 m-5" />
-      </div>
-
       <!-- section contact -->
       <div>
         <h6 class="text-uppercase font-weight-bold text-white fs-6">
           Contact us
         </h6>
         <hr
-          class="bg-success mb-4 mt-0 d-inline-block mx-auto"
+          class="bg-success mt-0 d-inline-block mx-auto"
           style="width: 125px; height: 2px"
         />
 
@@ -76,14 +67,12 @@
               ></a>
               30 avenue Victor hugo
             </li>
-            <hr />
             <li class="my-2 text-white">
               <a
                 class="fas fa-envelope text-decoration-none h-25 text-white me-2"
               ></a>
               ofcourse@gmail.com
             </li>
-            <hr />
             <li class="my-2 text-white">
               <a class="fas fa-mobile-alt text-white me-2"></a>
               04.12.22.33.45
@@ -91,6 +80,10 @@
           </ul>
         </div>
       </div>
+    </div>
+    <!-- section logo footer -->
+    <div>
+      <img src="/assets/logo_small.png" class="w-25 mb-2" />
     </div>
     <p>
       <i>&copy;Copyright {{ dateCopyright }} - by OfCourse</i>
