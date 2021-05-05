@@ -19,7 +19,8 @@
       <p class="card-text">
         {{ travel._description }}
       </p>
-      <a href="#" class="btn btn-primary">Add to cart</a>
+      <button *ngIf="connectUtils.isConnected" (click)="addCarts()" class="btn btn-primary">Add to cart</button>
+      <button *ngIf="!connectUtils.isConnected" [routerLink]="['/modalconnexion']" (click)="addCartNoConnect()" class="btn btn-primary">Add to cart</button>
     </div>
   </div>
 </div>
