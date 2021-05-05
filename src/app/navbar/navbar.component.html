@@ -91,74 +91,74 @@
     </div>
   </div>
 
-  <div id="btn">
-    <nav class="navbarNav">
-      <ul class="laMagieOpere">
-        <li>
-          <a [routerLink]="['/home']">home</a>
-          <span></span><span></span><span></span><span></span>
-        </li>
-        <li>
-          <a [routerLink]="['/continents-list']">continents</a>
-          <span></span><span></span><span></span><span></span>
-        </li>
-        <li>
-          <a [routerLink]="['/travel-list']">travels</a>
-          <span></span><span></span><span></span><span></span>
-        </li>
-        <li>
-          <a [routerLink]="['/contact']">contact</a>
-          <span></span><span></span><span></span><span></span>
-        </li>
-        <li>
-          <a
-            *ngIf="!connectUtils.isConnected"
-            [routerLink]="['/modalconnexion']"
-            >SIGN IN</a
-          >
-          <a *ngIf="connectUtils.isConnected" [routerLink]="['/profil']"
-            >PROFILE</a
-          >
-          <span></span><span></span><span></span><span></span>
-        </li>
-
-        <li>
-          <a id="carts" [routerLink]="['/cards']">🛒</a>
-        </li>
-
-        <div id="search">
-          <label for="site-search"></label>
-          <input
-            type="search"
-            id="site-search"
-            name="q"
-            aria-label="Search through site content"
-            [(ngModel)]="search"
-          />
-          <button (click)="onSearch()" id="btnsearch">🔎</button>
-        </div>
-      </ul>
-      <!-- ONLY RESPONSIVE -->
-      <button (click)="openMenu()" class="burger-btn-container">
-        <i class="bi bi-list burger-btn"></i>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary w-100">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['/home']">OfCourse</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <ul class="burgerMenu" *ngIf="isMenuOpen">
-        <li [routerLink]="['/home']">home</li>
-        <li [routerLink]="['/continents-list']">continents</li>
-        <li [routerLink]="['/travel-list']">travels</li>
-        <li [routerLink]="['/contact']">contact</li>
-        <li>
-          <a
-            *ngIf="!connectUtils.isConnected"
-            [routerLink]="['/modalconnexion']"
-            >sign in</a
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- LINKS -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/home']">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/continents-list']"
+              >Continents</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/travel-list']">Travels</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/contact']">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a
+              *ngIf="!connectUtils.isConnected"
+              class="nav-link"
+              [routerLink]="['/modalconnexion']"
+              >Sign in</a
+            >
+            <a
+              *ngIf="connectUtils.isConnected"
+              class="nav-link"
+              [routerLink]="['/profil']"
+              >Profile</a
+            >
+          </li>
+          <li
+            style="margin-left: 5em; cursor: pointer"
+            [routerLink]="['/cards']"
+            class="nav-item"
+            *ngIf="connectUtils.isConnected"
           >
-          <a *ngIf="connectUtils.isConnected" [routerLink]="['/profil']"
-            >profile</a
-          >
-        </li>
-        <li *ngIf="connectUtils.isConnected" [routerLink]="['/cards']">🛒</li>
-      </ul>
-    </nav>
-  </div>
+            <i style="color: white; font-size: 24px" class="bi bi-cart4"></i>
+          </li>
+        </ul>
+
+        <!-- SEARCHBAR -->
+        <form class="d-flex">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button style="color: white" class="btn btn-primary" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
 </header>
