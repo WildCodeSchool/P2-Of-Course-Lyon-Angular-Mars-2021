@@ -12,6 +12,7 @@
       >
       <div class="login-form">
         <div class="sign-in-htm">
+          <!-- LAST NAME INPUT -->
           <div class="group">
             <label for="lastnameInput" class="label">Last name</label>
             <input
@@ -25,6 +26,7 @@
                   !formulaire.get('name').valid
               }"
             />
+            <!-- LAST NAME ERRORS -->
             <div
               class="invalid-feeback"
               *ngIf="
@@ -51,6 +53,7 @@
               </span>
             </div>
           </div>
+          <!-- FIRST NAME INPUT -->
           <div class="group">
             <label for="firstNameInput" class="label">First name</label>
             <input
@@ -64,6 +67,7 @@
                   !formulaire.get('prenom').valid
               }"
             />
+            <!-- FIRST NAME ERRORS -->
             <div
               class="invalid-feeback"
               *ngIf="
@@ -90,6 +94,7 @@
               >
             </div>
           </div>
+          <!-- EMAIL INPUT -->
           <div class="group">
             <label for="emailInput" class="label">Email</label>
             <input
@@ -103,6 +108,7 @@
                   !formulaire.get('email').valid
               }"
             />
+            <!-- EMAIL ERRORS -->
             <div
               class="invalid-feeback"
               *ngIf="
@@ -133,6 +139,7 @@
               >
             </div>
           </div>
+          <!-- MESSAGE INPUT -->
           <div class="group">
             <label for="messageInput" class="label">Message</label>
             <textarea
@@ -148,6 +155,7 @@
                   !formulaire.get('message').valid
               }"
             ></textarea>
+            <!-- MESSAGE ERRORS -->
             <div
               class="invalid-feeback"
               *ngIf="
