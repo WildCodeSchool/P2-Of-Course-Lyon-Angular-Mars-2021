@@ -93,7 +93,14 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary w-100">
     <div class="container-fluid">
-      <a class="navbar-brand" [routerLink]="['/home']">OfCourse</a>
+      <!-- <a class="navbar-brand" [routerLink]="['/home']">OfCourse</a> -->
+      <img
+        class="navbar-brand d-block rounded-circle"
+        width="64"
+        [routerLink]="['/home']"
+        src="../../assets/logo_small_icon_only.png"
+        alt="of course"
+      />
       <button
         class="navbar-toggler"
         type="button"
@@ -109,29 +116,36 @@
         <!-- LINKS -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/home']">Home</a>
+            <a class="nav-link text-warning" [routerLink]="['/home']">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/continents-list']"
+            <a class="nav-link text-warning" [routerLink]="['/continents-list']"
               >Continents</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/travel-list']">Travels</a>
+            <a class="nav-link text-warning" [routerLink]="['/travel-list']"
+              >Travels</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/contact']">Contact</a>
+            <a class="nav-link text-warning" [routerLink]="['/contact']"
+              >Contact</a
+            >
           </li>
+        </ul>
+
+        <ul class="navbar-nav me-2 mb-2 mb-lg-0">
           <li class="nav-item">
             <a
               *ngIf="!connectUtils.isConnected"
-              class="nav-link"
+              class="nav-link text-warning"
               [routerLink]="['/modalconnexion']"
               >Sign in</a
             >
             <a
               *ngIf="connectUtils.isConnected"
-              class="nav-link"
+              class="nav-link text-warning"
               [routerLink]="['/profil']"
               >Profile</a
             >
