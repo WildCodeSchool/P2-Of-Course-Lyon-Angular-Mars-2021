@@ -122,7 +122,7 @@
           <span></span><span></span><span></span><span></span>
         </li>
 
-        <li>
+        <li *ngIf="connectUtils.isConnected">
           <a id="carts" [routerLink]="['/cards']">🛒</a>
         </li>
 

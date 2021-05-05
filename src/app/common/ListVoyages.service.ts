@@ -61,7 +61,10 @@ export class ListVoyages {
   }
 
   public addcard(article: Voyage) {
-    this.userCart.push(article);
+    if( !this.userCart.includes(article)){
+      this.userCart.push(article);
+    }
+    
   }
 
   public deleteCard(article: Voyage) {
