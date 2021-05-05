@@ -27,6 +27,9 @@ export class ModalconnexionComponent implements OnInit {
     if (this.isUserConnected === true) {
       this.router.navigateByUrl('/profil');
     }
+    if(this.service.cartclick){
+      this.router.navigateByUrl('/cards');
+    }
   }
 
   ngOnInit(): void {}
