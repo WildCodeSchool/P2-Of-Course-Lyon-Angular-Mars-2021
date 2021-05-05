@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit {
   };
 
   search: string = '';
+  isMenuOpen: boolean = false;
 
   // boolean si le user est connecté (depuis le service)
   connectUtils: ConnectUtils;
@@ -33,6 +34,11 @@ export class NavbarComponent implements OnInit {
     this.travelService.searchbarValue = this.search;
     // on redirige l'utilisateur vers la route /list
     this.route.navigate(['/travel-list']);
+  }
+
+  //menu deroulant
+  openMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
   ngOnInit(): void {

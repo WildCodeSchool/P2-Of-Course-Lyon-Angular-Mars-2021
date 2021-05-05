@@ -92,8 +92,8 @@
   </div>
 
   <div id="btn">
-    <nav>
-      <ul>
+    <nav class="navbarNav">
+      <ul class="laMagieOpere">
         <li>
           <a [routerLink]="['/home']">home</a>
           <span></span><span></span><span></span><span></span>
@@ -114,7 +114,7 @@
           <a
             *ngIf="!connectUtils.isConnected"
             [routerLink]="['/modalconnexion']"
-            >SIGN UP</a
+            >SIGN IN</a
           >
           <a *ngIf="connectUtils.isConnected" [routerLink]="['/profil']"
             >PROFILE</a
@@ -124,7 +124,6 @@
 
         <li>
           <a id="carts" [routerLink]="['/cards']">🛒</a>
-          
         </li>
 
         <div id="search">
@@ -138,8 +137,27 @@
           />
           <button (click)="onSearch()" id="btnsearch">🔎</button>
         </div>
-
-        
+      </ul>
+      <!-- ONLY RESPONSIVE -->
+      <button (click)="openMenu()" class="burger-btn-container">
+        <i class="bi bi-list burger-btn"></i>
+      </button>
+      <ul class="burgerMenu" *ngIf="isMenuOpen">
+        <li [routerLink]="['/home']">home</li>
+        <li [routerLink]="['/continents-list']">continents</li>
+        <li [routerLink]="['/travel-list']">travels</li>
+        <li [routerLink]="['/contact']">contact</li>
+        <li>
+          <a
+            *ngIf="!connectUtils.isConnected"
+            [routerLink]="['/modalconnexion']"
+            >sign in</a
+          >
+          <a *ngIf="connectUtils.isConnected" [routerLink]="['/profil']"
+            >profile</a
+          >
+        </li>
+        <li *ngIf="connectUtils.isConnected" [routerLink]="['/cards']">🛒</li>
       </ul>
     </nav>
   </div>

@@ -61,7 +61,6 @@ ul {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
-  
 }
 
 #search {
@@ -88,9 +87,11 @@ ul {
   background-color: transparent;
 }
 
+#btn {
+  width: 100%;
+}
 
-
-#carts{
+#carts {
   font-size: 45px;
 }
 
@@ -100,7 +101,7 @@ a {
   font-size: 20px;
 }
 
-nav ul li {
+.navbarNav ul li {
   --c: rgb(255, 255, 255);
   color: var(--c);
   font-size: 18px;
@@ -114,14 +115,14 @@ nav ul li {
   letter-spacing: 0.1em;
   text-align: center;
   line-height: 3em;
-  position: relative;
   overflow: hidden;
+  position: relative;
   z-index: 1;
   transition: 0.5s;
   margin: 1em;
 }
 
-nav ul li span {
+.navbarNav ul li span {
   position: absolute;
   width: 66%;
   height: 100%;
@@ -134,36 +135,63 @@ nav ul li span {
   z-index: -1;
 }
 
-nav ul li:hover {
+.navbarNav ul li:hover {
   color: rgb(255, 255, 255);
 }
 
-nav ul li:hover span {
+.navbarNav ul li:hover span {
   transform: translateY(0) scale(2);
 }
 
-nav ul li span:nth-child(1) {
+.navbarNav ul li span:nth-child(1) {
   --n: 1;
 }
 
-nav ul li span:nth-child(2) {
+.navbarNav ul li span:nth-child(2) {
   --n: 2;
 }
 
-nav ul li span:nth-child(3) {
+.navbarNav ul li span:nth-child(3) {
   --n: 3;
 }
 
-nav ul li span:nth-child(4) {
+.navbarNav ul li span:nth-child(4) {
   --n: 4;
 }
+.burger-btn-container {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  left: 90%;
+  top: 10px;
+}
+.burger-btn {
+  visibility: hidden;
+  font-size: 45px;
+  color: white;
+  width: 100%;
+}
+.burgerMenu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 80%;
+}
+.burgerMenu li {
+  display: block;
+  height: 32px;
+}
+.burgerMenu li a {
+  font-size: 16px;
+  color: white;
+}
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1024px) {
   #logo {
     display: none;
   }
 
-  li {
+  .laMagieOpere li {
     display: none;
   }
 
@@ -176,6 +204,9 @@ nav ul li span:nth-child(4) {
 
   #btnsearch {
     margin-left: 0px;
+  }
+  .burger-btn {
+    visibility: visible;
   }
 }
 
@@ -218,5 +249,8 @@ nav ul li span:nth-child(4) {
 
   #btnsearch {
     margin-left: 0px;
+  }
+  .burger-btn {
+    visibility: visible;
   }
 }
