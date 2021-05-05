@@ -147,12 +147,14 @@
         </ul>
 
         <!-- SEARCHBAR -->
-        <form class="d-flex">
+        <form (submit)="onSearch()" class="d-flex">
           <input
             class="form-control me-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
+            name="searchNavInput"
+            [(ngModel)]="search"
           />
           <button style="color: white" class="btn btn-primary" type="submit">
             Search
