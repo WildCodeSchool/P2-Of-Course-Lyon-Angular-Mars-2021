@@ -6,29 +6,32 @@ import { defaultVoyages } from './voyages-mok';
   providedIn: 'root',
 })
 export class ListVoyages {
-  constructor() {}
-
   // variable searchbar
   public searchbarValue: string = '';
   // variable continent card
   public continentClickValue: string = '';
-
+  // panier utilisateur
   public userCart: Voyage[] = [];
-
+  // liste complete des voyages depuis lme mok
   public _listDeVoyages: Voyage[];
-
+  // voyage qui s'affiche sur la page details
   public currentDetailsVoyage: Voyage;
 
-  public setCurrentDetailsVoyage(voyage: Voyage) {
+  constructor() {}
+
+  // definir le voyage details actuel
+  public setCurrentDetailsVoyage(voyage: Voyage): void {
     this.currentDetailsVoyage = voyage;
   }
 
-  public initVoyage() {
+  // récupérer et reinitialiser le tableau de voyages
+  public initVoyage(): Voyage[] {
     this._listDeVoyages = defaultVoyages;
     return this._listDeVoyages;
   }
 
-  public getContinent(continent: string) {
+  // filtrer les voyages par continznt
+  public getContinent(continent: string): Voyage[] {
     const tableauAm: Voyage[] = [];
     const continentLowC = continent.toLocaleLowerCase();
     this._listDeVoyages.forEach((element) => {
@@ -39,7 +42,8 @@ export class ListVoyages {
     return tableauAm;
   }
 
-  public getPays(pays: string) {
+  // filtrer les voyages par pays
+  public getPays(pays: string): Voyage[] {
     const tableauP: Voyage[] = [];
     const paysLowC = pays.toLocaleLowerCase();
     this._listDeVoyages.forEach((element) => {
@@ -49,7 +53,9 @@ export class ListVoyages {
     });
     return tableauP;
   }
-  public getVille(ville: string) {
+
+  // filtrer les voyages par ville
+  public getVille(ville: string): Voyage[] {
     const tableauV: Voyage[] = [];
     const villeLowC = ville.toLocaleLowerCase();
     this._listDeVoyages.forEach((element) => {
@@ -60,13 +66,14 @@ export class ListVoyages {
     return tableauV;
   }
 
-  public addcard(article: Voyage) {
-    if( !this.userCart.includes(article)){
+  // ajouter un voyage au panier
+  public addcard(article: Voyage): void {
+    if (!this.userCart.includes(article)) {
       this.userCart.push(article);
     }
-    
   }
 
+  // retirer un voyage du panier
   public deleteCard(article: Voyage) {
     this.userCart.splice(this.userCart.indexOf(article), 1);
   }

@@ -9,18 +9,24 @@ import { Voyage } from '../common/Voyage.model';
   styleUrls: ['./cards.component.css'],
 })
 export class CardsComponent implements OnInit {
+  // tableau de voyage dans le panier
+  userCarts: Voyage[];
+
   constructor(private service: ListVoyages, private router: Router) {}
 
-  userCarts: Voyage[];
-  deleteCarts(carts: Voyage) {
+  // suprimmer du panier
+  deleteCarts(carts: Voyage): void {
     this.service.deleteCard(carts);
   }
-  clickCard(travel: Voyage) {
+
+  // afficher les details lors d'un click sur un voyage
+  clickCard(travel: Voyage): void {
     this.service.currentDetailsVoyage = travel;
     this.router.navigateByUrl('/detailsVoyages');
   }
 
   ngOnInit(): void {
+    // tableau de voyage dans le panier (service)
     this.userCarts = this.service.userCart;
   }
 }

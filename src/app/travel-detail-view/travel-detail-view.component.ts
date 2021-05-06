@@ -8,31 +8,33 @@ import { UtilisateurService } from '../utilisateur.service';
 @Component({
   selector: 'app-travel-detail-view',
   templateUrl: './travel-detail-view.component.html',
-  styleUrls: ['./travel-detail-view.component.css']
+  styleUrls: ['./travel-detail-view.component.css'],
 })
 export class TravelDetailViewComponent implements OnInit {
+  travel: Voyage = this.service.currentDetailsVoyage;
+  connectUtils: ConnectUtils;
 
-  constructor(private service: ListVoyages, private router : Router,
-    private userService: UtilisateurService){}
+  constructor(
+    private service: ListVoyages,
+    private router: Router,
+    private userService: UtilisateurService
+  ) {}
 
-  travel : Voyage = this.service.currentDetailsVoyage;
-  connectUtils : ConnectUtils
+  // cette fonction permet d'ajouter le produit au click
+  addCarts(): void {
+    this.service.addcard(this.travel);
 
-  // cette fonction permet d'ajouter le produit au click 
-  addCarts(){
-    this.service.addcard(this.travel)
-  
-    this.router.navigateByUrl("/travel-list")
+    this.router.navigateByUrl('/travel-list');
   }
 
-  addCartNoConnect(){
-    this.service.addcard(this.travel)
-    this.userService.cartclick = true
+  // cette fonction redirige l'utilisateur vers la connexion lors de l'ajout au panier
+  addCartNoConnect(): void {
+    this.service.addcard(this.travel);
+    this.userService.cartclick = true;
   }
 
   ngOnInit(): void {
-    this.travel = this.service.currentDetailsVoyage
-    this.connectUtils = this.userService.connectUtils
+    this.travel = this.service.currentDetailsVoyage;
+    this.connectUtils = this.userService.connectUtils;
   }
-
 }

@@ -1,5 +1,6 @@
 <div id="font">
   <form class="login-wrap" (submit)="onSubmit()" [formGroup]="signup">
+    <!-- CHANGING FORM TAB -->
     <div class="login-html">
       <input id="tab-1" type="radio" name="tab" class="sign-in" checked /><label
         for="tab-1"
@@ -15,7 +16,9 @@
       /><label for="tab-2" class="tab" style="text-decoration: line-through"
         >Sign Up</label
       >
+      <!-- FIN CHANGING FORM TAB -->
       <div class="login-form">
+        <!-- SIGN IN FORM -->
         <div class="sign-in-htm">
           <div class="group">
             <label for="user" class="label">Email</label>
@@ -48,7 +51,9 @@
             <a href="#forgot">Forgot Password?</a>
           </div>
         </div>
+        <!-- FIN SIGN IN FORM -->
 
+        <!-- SIGN UP FORM -->
         <div class="sign-up-htm" style="visibility: hidden">
           <div class="group">
             <label for="userup" class="label">Username</label>
@@ -86,6 +91,7 @@
             <label for="tab-1">Already Member?</label>
           </div>
         </div>
+        <!-- FIN SIGN UP FORM -->
       </div>
     </div>
   </form>

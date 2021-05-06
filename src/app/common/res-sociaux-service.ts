@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { SocialMedia } from '../models/social.model';
+import { SocialMedia } from './social.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ReseauxList {
-    //je crée un tableau de type SocialMedia
+  //je crée un tableau de type SocialMedia
   public reseaux: SocialMedia[] = [];
-
 
   //je push mes trois valeurs dans le tableau
   constructor() {
@@ -26,7 +25,7 @@ export class ReseauxList {
         'instagram',
         'fab fa-instagram',
         'https://www.instagram.com/?hl=fr'
-      ),
+      )
     );
   }
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConnectUtils } from '../common/connectUtils';
 import { ListVoyages } from '../common/ListVoyages.service';
@@ -10,12 +10,6 @@ import { UtilisateurService } from '../utilisateur.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(
-    private service: UtilisateurService,
-    private travelService: ListVoyages,
-    private route: Router
-  ) {}
-
   Logo = {
     nuageUn: '../assets/nuage1.png',
     nuage: '../assets/nuage.png',
@@ -23,22 +17,24 @@ export class NavbarComponent implements OnInit {
     carts: '../assets/cards.png',
   };
 
+  // ngModel de la recherche
   search: string = '';
-  isMenuOpen: boolean = false;
 
   // boolean si le user est connecté (depuis le service)
   connectUtils: ConnectUtils;
 
-  onSearch() {
+  constructor(
+    private service: UtilisateurService,
+    private travelService: ListVoyages,
+    private route: Router
+  ) {}
+
+  // permet de lancer la recherche depuis le formulaire dans la navbar
+  onSearch(): void {
     // on définit la valeur de la recherche dans le service
     this.travelService.searchbarValue = this.search;
     // on redirige l'utilisateur vers la route /list
     this.route.navigate(['/travel-list']);
-  }
-
-  //menu deroulant
-  openMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
   }
 
   ngOnInit(): void {
