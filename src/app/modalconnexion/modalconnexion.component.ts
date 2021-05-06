@@ -17,6 +17,7 @@ export class ModalconnexionComponent implements OnInit {
   });
 
   isUserConnected: boolean = this.service.connectUtils.isConnected;
+  wrong: boolean;
 
   onSubmit() {
     this.service.connectUser(
@@ -24,10 +25,14 @@ export class ModalconnexionComponent implements OnInit {
       this.signup.value['password']
     );
     this.isUserConnected = this.service.connectUtils.isConnected;
+    this.wrong = this.service.connectUser(
+      this.signup.value['email'],
+      this.signup.value['password']
+    );
     if (this.isUserConnected === true) {
       this.router.navigateByUrl('/profil');
     }
-    if(this.service.cartclick){
+    if (this.service.cartclick) {
       this.router.navigateByUrl('/cards');
     }
   }

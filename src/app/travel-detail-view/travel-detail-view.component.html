@@ -5,7 +5,7 @@
     class="btn btn-primary"
     [routerLink]="['/travel-list']"
   >
-    Retour
+    Back
   </button>
   <img [src]="travel._photo" [alt]="travel._name" />
   <h1>{{ travel._name | uppercase }}</h1>
@@ -16,11 +16,24 @@
     <div class="card-header">Informations</div>
     <div class="card-body">
       <h5 class="card-title">Date of travel: {{ travel._date }}</h5>
-      <p class="card-text">
+      <p class="card-text" style="width: 80%; margin: auto; margin-bottom: 2em">
         {{ travel._description }}
       </p>
-      <button *ngIf="connectUtils.isConnected" (click)="addCarts()" class="btn btn-primary">Add to cart</button>
-      <button *ngIf="!connectUtils.isConnected" [routerLink]="['/modalconnexion']" (click)="addCartNoConnect()" class="btn btn-primary">Add to cart</button>
+      <button
+        *ngIf="connectUtils.isConnected"
+        (click)="addCarts()"
+        class="btn btn-primary"
+      >
+        Add to cart
+      </button>
+      <button
+        *ngIf="!connectUtils.isConnected"
+        [routerLink]="['/modalconnexion']"
+        (click)="addCartNoConnect()"
+        class="btn btn-primary"
+      >
+        Add to cart
+      </button>
     </div>
   </div>
 </div>

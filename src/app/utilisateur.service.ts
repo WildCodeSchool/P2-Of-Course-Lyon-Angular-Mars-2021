@@ -9,7 +9,7 @@ import { usersList } from './utilisateurs-mok';
 export class UtilisateurService {
   public connectUtils: ConnectUtils = new ConnectUtils();
   public users: Utilisateur[] = usersList;
-public cartclick: boolean = false
+  public cartclick: boolean = false;
   //cette methode valide la connection
   public connectUser(email: string, password: string) {
     // on va chercher si l'email en parametre est le meme qu'un utilisateur de la liste
@@ -20,6 +20,8 @@ public cartclick: boolean = false
     if (user.password === password) {
       this.connectUtils.connectedUser = user;
       this.connectUtils.isConnected = true;
+    } else {
+      return true;
     }
   }
 }

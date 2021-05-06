@@ -54,7 +54,7 @@ a {
   border-top-right-radius: 0;
   border: none;
   padding: 15px 20px;
-
+  color: white;
   background: rgba(255, 255, 255, 0.1);
 }
 .login-wrap {
