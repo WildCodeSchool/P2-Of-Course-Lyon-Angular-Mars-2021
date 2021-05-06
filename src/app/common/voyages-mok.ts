@@ -1,4 +1,4 @@
-import { Voyage } from './Voyage.model';
+import { Voyage } from './models/Voyage.model';
 
 export const defaultVoyages: Voyage[] = [
   new Voyage(

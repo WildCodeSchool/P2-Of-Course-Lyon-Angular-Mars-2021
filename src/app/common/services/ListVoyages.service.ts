@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Voyage } from './Voyage.model';
-import { defaultVoyages } from './voyages-mok';
+import { Voyage } from '../models/Voyage.model';
+import { defaultVoyages } from '../voyages-mok';
 
 @Injectable({
   providedIn: 'root',

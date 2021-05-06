@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ListVoyages } from '../common/ListVoyages.service';
-import { Voyage } from '../common/Voyage.model';
+import { ListVoyages } from '../common/services/ListVoyages.service';
+import { Voyage } from '../common/models/Voyage.model';
 
 @Component({
   selector: 'app-card-travel',

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ConnectUtils } from '../common/connectUtils';
-import { ReseauxList } from '../common/res-sociaux-service';
-import { SocialMedia } from '../common/social.model';
-import { UtilisateurService } from '../utilisateur.service';
+import { ReseauxList } from '../common/services/res-sociaux-service';
+import { SocialMedia } from '../common/models/social.model';
+import { UtilisateurService } from '../common/services/utilisateur.service';
 
 @Component({
   selector: 'app-footer',

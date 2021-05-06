@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConnectUtils } from '../common/connectUtils';
-import { ListVoyages } from '../common/ListVoyages.service';
-import { Voyage } from '../common/Voyage.model';
-import { UtilisateurService } from '../utilisateur.service';
+import { ListVoyages } from '../common/services/ListVoyages.service';
+import { Voyage } from '../common/models/Voyage.model';
+import { UtilisateurService } from '../common/services/utilisateur.service';
 
 @Component({
   selector: 'app-travel-detail-view',

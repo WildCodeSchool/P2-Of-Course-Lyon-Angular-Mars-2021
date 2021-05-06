@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SocialMedia } from './social.model';
+import { SocialMedia } from '../models/social.model';
 
 @Injectable({
   providedIn: 'root',

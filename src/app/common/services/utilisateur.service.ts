@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ConnectUtils } from './common/connectUtils';
-import { Utilisateur } from './utilisateur.model';
-import { usersList } from './utilisateurs-mok';
+import { ConnectUtils } from '../connectUtils';
+import { Utilisateur } from '../models/utilisateur.model';
+import { usersList } from '../utilisateurs-mok';
 
 @Injectable({
   providedIn: 'root',

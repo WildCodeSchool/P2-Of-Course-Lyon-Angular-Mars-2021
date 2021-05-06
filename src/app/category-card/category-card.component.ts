@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { ListVoyages } from '../common/ListVoyages.service';
+import { ListVoyages } from '../common/services/ListVoyages.service';
 import { ContinentCard } from '../common/models/continent.model';
 
 @Component({

@@ -1,4 +1,4 @@
-import { Utilisateur } from './utilisateur.model';
+import { Utilisateur } from './models/utilisateur.model';
 
 export const usersList: Utilisateur[] = [
   new Utilisateur(

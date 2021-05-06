@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ListVoyages } from '../common/ListVoyages.service';
-import { Voyage } from '../common/Voyage.model';
+import { ListVoyages } from '../common/services/ListVoyages.service';
+import { Voyage } from '../common/models/Voyage.model';
 
 @Component({
   selector: 'app-cards',

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConnectUtils } from '../common/connectUtils';
-import { ListVoyages } from '../common/ListVoyages.service';
-import { UtilisateurService } from '../utilisateur.service';
+import { ListVoyages } from '../common/services/ListVoyages.service';
+import { UtilisateurService } from '../common/services/utilisateur.service';
 
 @Component({
   selector: 'app-navbar',
